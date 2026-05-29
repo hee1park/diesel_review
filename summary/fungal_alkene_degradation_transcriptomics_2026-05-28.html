@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fungal Alkene Degradation — Transcriptomics Survey</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 15px; line-height: 1.6; color: #222; background: #f6f8fa; padding: 24px 16px; }
+  .container { max-width: 900px; margin: 0 auto; }
+
+  /* Header */
+  header { background: linear-gradient(135deg, #1b4332 0%, #2d6a4f 100%); color: #fff; border-radius: 10px; padding: 32px 28px 24px; margin-bottom: 32px; }
+  header h1 { font-size: 1.7rem; font-weight: 700; margin-bottom: 6px; }
+  header .subtitle { font-size: 0.95rem; opacity: 0.85; margin-bottom: 4px; }
+  header .meta { font-size: 0.83rem; opacity: 0.65; }
+
+  /* Section headings */
+  h2 { font-size: 1.18rem; font-weight: 700; color: #1b4332; margin: 36px 0 14px; border-bottom: 2px solid #b7e4c7; padding-bottom: 6px; }
+
+  /* Paper cards */
+  details { background: #fff; border: 1px solid #d8e4dc; border-radius: 8px; margin-bottom: 12px; overflow: hidden; }
+  details[open] { box-shadow: 0 2px 10px rgba(0,0,0,0.07); }
+  summary { cursor: pointer; padding: 14px 18px; font-weight: 600; font-size: 0.95rem; list-style: none; display: flex; align-items: flex-start; gap: 10px; user-select: none; }
+  summary::-webkit-details-marker { display: none; }
+  summary::before { content: "▶"; font-size: 0.7rem; margin-top: 4px; color: #40916c; flex-shrink: 0; transition: transform 0.2s; }
+  details[open] summary::before { transform: rotate(90deg); }
+  .card-meta { font-size: 0.8rem; font-weight: 400; color: #666; margin-top: 2px; }
+  .card-body { padding: 0 18px 18px; }
+  .badge { display: inline-block; font-size: 0.7rem; font-weight: 700; padding: 2px 7px; border-radius: 10px; margin-right: 4px; text-transform: uppercase; letter-spacing: 0.04em; }
+  .badge-green  { background: #d8f3dc; color: #1b4332; }
+  .badge-teal   { background: #caf0f8; color: #03045e; }
+  .badge-amber  { background: #fff3cd; color: #856404; }
+  .badge-purple { background: #e9d8fd; color: #5a189a; }
+  .badge-red    { background: #fde8e8; color: #9b1c1c; }
+
+  .field { margin-top: 12px; }
+  .field-label { font-size: 0.76rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: #888; margin-bottom: 3px; }
+  .field-body { font-size: 0.9rem; color: #333; }
+  em { font-style: italic; }
+  strong { font-weight: 600; }
+
+  /* Scope note */
+  .scope-note { background: #f0fff4; border-left: 4px solid #40916c; border-radius: 4px; padding: 12px 16px; margin-bottom: 18px; font-size: 0.88rem; color: #2d6a4f; }
+
+  /* Cross-paper observations */
+  .obs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  @media (max-width: 600px) { .obs-grid { grid-template-columns: 1fr; } }
+  .obs-card { background: #fff; border: 1px solid #d8e4dc; border-radius: 8px; padding: 16px; }
+  .obs-card h3 { font-size: 0.88rem; font-weight: 700; color: #1b4332; margin-bottom: 7px; }
+  .obs-card ul { padding-left: 16px; font-size: 0.87rem; color: #444; }
+  .obs-card ul li { margin-bottom: 5px; }
+
+  /* Reference table */
+  .table-wrap { overflow-x: auto; margin-top: 8px; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.76rem; background: #fff; border-radius: 8px; overflow: hidden; border: 1px solid #d8e4dc; }
+  th { background: #1b4332; color: #fff; padding: 9px 10px; text-align: left; font-weight: 600; white-space: nowrap; }
+  td { padding: 8px 10px; border-bottom: 1px solid #eef1f8; vertical-align: top; }
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: #f0fff4; }
+  a { color: #2d6a4f; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  footer { text-align: center; font-size: 0.78rem; color: #999; margin-top: 48px; padding-top: 16px; border-top: 1px solid #eee; }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- ═══════════════ HEADER ═══════════════ -->
+  <header>
+    <h1>Fungal Alkene Degradation: Transcriptomics</h1>
+    <p class="subtitle">Systematic Literature Survey &mdash; 7 papers surveyed (2020&ndash;2025)</p>
+    <p class="meta">Generated 2026-05-28 &nbsp;|&nbsp; Source: PubMed / PMC / bioRxiv</p>
+  </header>
+
+  <!-- Scope note -->
+  <div class="scope-note">
+    <strong>Scope note:</strong> "Fungal alkene degradation" encompasses compounds containing C=C double bonds — terminal alkenes (in kerosene/jet fuel), polyene chains (polyethylene after oxidative pre-treatment), cyclic alkene terpenes (limonene, terpenoids), and polycyclic aromatic hydrocarbons (PAHs with delocalized &pi; systems). Papers were selected specifically for inclusion of transcriptomic or gene-expression profiling data (RNA-seq, metatranscriptomics, or qRT-PCR) published 2020–2025.
+  </div>
+
+  <!-- ═══════════════ PAPER SUMMARIES ═══════════════ -->
+  <h2>Paper Summaries</h2>
+
+  <!-- Paper 1 -->
+  <details>
+    <summary>
+      <span>
+        Metatranscriptomics of Fungal–Bacterial Consortia in Aircraft Kerosene Tanks Identifies Fuel-Degrading Genes
+        <div class="card-meta">Krohn et al. &nbsp;·&nbsp; <em>Front. Microbiology</em> 2021 &nbsp;·&nbsp;
+          <span class="badge badge-teal">Metatranscriptomics</span>
+          <span class="badge badge-green">Kerosene / Alkenes</span>
+          <span class="badge badge-purple">Multi-species</span>
+        </div>
+      </span>
+    </summary>
+    <div class="card-body">
+      <div class="field"><div class="field-label">Problem</div><div class="field-body">Microbial contamination of aviation fuel tanks causes corrosion and potential fuel degradation. The genetic basis for fuel metabolism — including alkene components — by resident fungal-bacterial biofilms was unknown.</div></div>
+      <div class="field"><div class="field-label">Methods</div><div class="field-body">Six biofilm samples from aircraft kerosene tanks were subjected to metagenomic sequencing (Illumina NextSeq 500; 33–168 M reads/sample; metaSPAdes assembly + metaBAT2 binning). One biofilm sample (triplicate) underwent metatranscriptomic analysis: ~112 M bacterial + 130 M fungal reads mapped to reference genomes after rRNA depletion.</div></div>
+      <div class="field"><div class="field-label">Findings</div><div class="field-body">Fungal transcriptomics (predominantly <em>Amorphotheca</em> spp.) revealed <strong>15,441 RNA reads mapped to aldehyde dehydrogenases and cytochrome P450-like enzymes</strong> — the central alkene/alkane oxidation pathway. Notably, 4,322 reads mapped to carboxylesterase type II in <em>Amorphotheca</em>, enabling long-chain hydrocarbon ester hydrolysis. Alkene reductase gene expression was also detected, indicating in-situ reductive desaturation activity in fuel.</div></div>
+      <div class="field"><div class="field-label">Takeaways</div><div class="field-body">Metatranscriptomics from a real industrial environment demonstrates that fungi actively express alkene/alkane catabolism genes in situ. CYP450-aldehyde dehydrogenase cascades and carboxylesterases are the dominant active enzymatic routes for fuel alkene metabolism.</div></div>
+      <div class="field"><div class="field-label">Limitations</div><div class="field-body">Only one sample processed for transcriptomics due to restricted tank access; poor genome annotation for <em>Amorphotheca</em> constrained functional gene interpretation; no quantitative degradation measurement.</div></div>
+    </div>
+  </details>
+
+  <!-- Paper 2 -->
+  <details>
+    <summary>
+      <span>
+        Transcriptomics Identifies 153 Degradation Enzymes in <em>Alternaria alternata</em> FB1 Degrading Polyethylene
+        <div class="card-meta">Gao, Liu &amp; Sun &nbsp;·&nbsp; <em>J. Hazardous Materials</em> 2022 &nbsp;·&nbsp;
+          <span class="badge badge-green">RNA-seq</span>
+          <span class="badge badge-teal">Polyethylene</span>
+          <span class="badge badge-amber">Marine fungus</span>
+        </div>
+      </span>
+    </summary>
+    <div class="card-body">
+      <div class="field"><div class="field-label">Problem</div><div class="field-body">Polyethylene (PE) — one of the most abundant plastic pollutants — is highly recalcitrant due to its long polyene chains. The molecular enzymatic basis for fungal PE degradation remains almost entirely uncharacterized.</div></div>
+      <div class="field"><div class="field-label">Methods</div><div class="field-body">Isolation of <em>Alternaria alternata</em> FB1 from marine plastic waste. Degradation quantified by SEM, FTIR, XRD, and GC-MS over 120 days. Transcriptomic profiling performed with PE film as sole carbon source to identify differentially expressed enzymes; two candidate enzymes (laccase, peroxidase) were recombinantly expressed and functionally validated.</div></div>
+      <div class="field"><div class="field-label">Findings</div><div class="field-body">After 120 days, <em>A. alternata</em> FB1 reduced PE molecular weight by <strong>95%</strong>; the primary degradation product was diglycolamine (93.28% by GC-MS). Transcriptomics identified <strong>153 upregulated enzymes</strong> potentially involved in PE degradation, including laccase (59.49 kDa) and peroxidase (36.7 kDa). Both recombinant proteins demonstrated direct PE alkene bond oxidation activity in vitro.</div></div>
+      <div class="field"><div class="field-label">Takeaways</div><div class="field-body">Transcriptomics is a powerful prospecting tool for cataloguing the broad enzymatic repertoire fungi deploy against polyene substrates. Laccase and peroxidase acting on the C=C bonds introduced by UV pre-oxidation are the verified initial attack enzymes in <em>Alternaria</em> PE catabolism.</div></div>
+      <div class="field"><div class="field-label">Limitations</div><div class="field-body">PE requires UV pre-treatment to introduce surface C=C bonds and functional groups before fungal attack begins; no untreated PE control reported; downstream metabolic pathway from diglycolamine onward not characterized.</div></div>
+    </div>
+  </details>
+
+  <!-- Paper 3 -->
+  <details>
+    <summary>
+      <span>
+        qRT-PCR Transcriptomics of Laccase Gene Family in <em>Aspergillus terreus</em> during Crude Oil Degradation
+        <div class="card-meta">Alharbi et al. &nbsp;·&nbsp; <em>Biology (Basel)</em> 2022 &nbsp;·&nbsp;
+          <span class="badge badge-green">qRT-PCR</span>
+          <span class="badge badge-teal">Crude oil / aromatics</span>
+          <span class="badge badge-amber">Gene family</span>
+        </div>
+      </span>
+    </summary>
+    <div class="card-body">
+      <div class="field"><div class="field-label">Problem</div><div class="field-body">Fungal laccases oxidize both aliphatic and aromatic hydrocarbon substrates — including alkene π-bonds — but which of the multiple laccase paralogues is transcriptionally active during crude oil biodegradation was unknown.</div></div>
+      <div class="field"><div class="field-label">Methods</div><div class="field-body">Cultivation of <em>A. terreus</em> KC462061 on crude oil with five inductors (Cu²⁺, Zn²⁺, ABTS, ferulic acid, guaiacol) in factorial design. Laccase activity assayed spectrophotometrically; hydrocarbon degradation by GC-MS; protein profiles by SDS-PAGE; qRT-PCR quantification of eight laccase paralogs: <em>Lcc1</em>, <em>3</em>, <em>5</em>, <em>6</em>, <em>8</em>, <em>10</em>, <em>11</em>, <em>12</em>.</div></div>
+      <div class="field"><div class="field-label">Findings</div><div class="field-body">Cu–ABTS co-induction increased laccase yield <strong>22-fold after 10 days</strong>; aliphatic hydrocarbon degradation reached 82.1% and aromatic degradation 77.4%. Among eight paralogues, <em><strong>Lcc11</strong></em> and <em><strong>Lcc12</strong></em> dominated the transcription profile and their expression was tightly coupled to Cu-ABTS induction — while <em>Lcc1</em> and <em>Lcc3</em> remained constitutively low.</div></div>
+      <div class="field"><div class="field-label">Takeaways</div><div class="field-body">Laccase gene subfunctionalization is real: within an eight-member family, only two paralogues drive the hydrocarbon-degradation response. Cu²⁺-ABTS induction is the dominant regulatory signal for alkene-attacking laccases in <em>Aspergillus</em>.</div></div>
+      <div class="field"><div class="field-label">Limitations</div><div class="field-body">Single isolate; real-world soil conditions not tested; full transcriptome-wide analysis not performed (only eight pre-selected laccase genes); regulatory mechanism upstream of <em>Lcc11/12</em> uncharacterized.</div></div>
+    </div>
+  </details>
+
+  <!-- Paper 4 -->
+  <details>
+    <summary>
+      <span>
+        RNA-Seq of <em>Phlebia acerina</em> Reveals Transferase and Binding-Protein Upregulation during BaP Degradation
+        <div class="card-meta">Zhang et al. &nbsp;·&nbsp; <em>J. Fungi</em> 2023 &nbsp;·&nbsp;
+          <span class="badge badge-green">RNA-seq</span>
+          <span class="badge badge-teal">Benzo[a]pyrene</span>
+          <span class="badge badge-red">White-rot fungus</span>
+        </div>
+      </span>
+    </summary>
+    <div class="card-body">
+      <div class="field"><div class="field-label">Problem</div><div class="field-body">Benzo[a]pyrene (BaP) is a five-ring PAH with dense conjugated π-electron (alkene) character, classified as a Group 1 human carcinogen. The genes and enzymes deployed by white-rot fungi for BaP catabolism had not been profiled by RNA-seq.</div></div>
+      <div class="field"><div class="field-label">Methods</div><div class="field-body">Liquid culture assays of <em>Phlebia acerina</em> with BaP (50 mg/L); three nonionic surfactants (Brij 30, Triton X-100, Tween 80) tested for bioavailability enhancement; enzyme activity assays (LiP, MnP, laccase); RNA-seq transcriptomics applied to BaP-exposed cultures; qPCR validation of key differentially expressed transcripts.</div></div>
+      <div class="field"><div class="field-label">Findings</div><div class="field-body"><em>P. acerina</em> achieved 57.7% BaP degradation without surfactant; Brij 30 (1–2 g/L) boosted this to <strong>~94%</strong>. RNA-seq revealed <strong>upregulation of transferase genes and binding proteins</strong> as the primary transcriptional response — not CYP450 (CYP450 inhibitor reduced degradation only ~6%). Peroxidases remained the main catalytic drivers; Brij 30 suppressed laccase but preserved peroxidase activity.</div></div>
+      <div class="field"><div class="field-label">Takeaways</div><div class="field-body">CYP450 is surprisingly dispensable for high-ring PAH degradation by <em>Phlebia</em>; transferases and binding proteins dominate the transcriptomic signature, suggesting that conjugation and solubilization — not initial oxidation — are the transcriptionally costly steps. Surfactant selection critically shapes both enzymatic and gene-expression outcomes.</div></div>
+      <div class="field"><div class="field-label">Limitations</div><div class="field-body">High BaP concentration (50 mg/L) is supra-environmental; single strain; BaP mineralization (CO₂ production) not directly measured; specific transferase gene identities not fully characterized.</div></div>
+    </div>
+  </details>
+
+  <!-- Paper 5 -->
+  <details>
+    <summary>
+      <span>
+        Genomic and Transcriptomic Screening of <em>Penicillium digitatum</em> for Limonene (Cyclic Alkene) Biotransformation Genes
+        <div class="card-meta">Zhang et al. &nbsp;·&nbsp; <em>Front. Microbiology</em> 2020 &nbsp;·&nbsp;
+          <span class="badge badge-green">RNA-seq</span>
+          <span class="badge badge-teal">Limonene / terpene</span>
+          <span class="badge badge-amber">CYP450</span>
+        </div>
+      </span>
+    </summary>
+    <div class="card-body">
+      <div class="field"><div class="field-label">Problem</div><div class="field-body">Limonene — a bicyclic monoterpene containing two C=C bonds — is converted to the high-value fragrance α-terpineol by <em>Penicillium digitatum</em>, but the responsible enzyme(s) and transcriptional regulation were unknown.</div></div>
+      <div class="field"><div class="field-label">Methods</div><div class="field-body">Whole-genome sequencing (29.09 Mb, 9,086 genes); transcriptomic comparison of limonene-treated vs. control cultures at 12 h (Illumina RNA-seq); differential gene expression analysis; enzyme inhibitor studies (CYP450 inhibitor, NADPH depletion); subcellular fractionation; qPCR validation of top candidates.</div></div>
+      <div class="field"><div class="field-label">Findings</div><div class="field-body">4,128–4,148 differentially expressed genes identified under limonene exposure. Two CYP450 genes emerged as top candidates: <em>PDIDSM_85260</em> and <em>PDIDSM_67430</em> (CYP450 reductase; <strong>132-fold upregulated</strong>). ABC transporters and terpenoid synthase genes were also upregulated; TCA cycle and sterol biosynthesis genes were downregulated, suggesting redirection of acetyl-CoA flux toward limonene catabolism. CYP450 inhibitor confirmed P450 is the rate-limiting oxidase for C=C epoxidation in limonene → α-terpineol conversion.</div></div>
+      <div class="field"><div class="field-label">Takeaways</div><div class="field-body">CYP450 epoxidation of the exocyclic C=C bond is the decisive catalytic step, with the reductase partner gene as the rate-limiting transcriptional target. Mass gene reprogramming (>4,000 DEGs) in response to a single alkene suggests global metabolic rerouting, not a narrow dedicated pathway.</div></div>
+      <div class="field"><div class="field-label">Limitations</div><div class="field-body">Functional role of top CYP450 candidate PDIDSM_85260 confirmed by inhibitor studies but not by knockout; proteomic data did not fully corroborate all predicted protein expressions, pointing to significant post-transcriptional regulation.</div></div>
+    </div>
+  </details>
+
+  <!-- Paper 6 -->
+  <details>
+    <summary>
+      <span>
+        Multi-omics (RNAseq + Secretome) of <em>Aspergillus parasiticus</em> on Long-Chain Alkanes for PE Modification
+        <div class="card-meta">Siaperas et al. &nbsp;·&nbsp; <em>Environmental Pollution</em> 2025 &nbsp;·&nbsp;
+          <span class="badge badge-green">RNA-seq + Proteomics</span>
+          <span class="badge badge-teal">Long-chain alkanes / PE</span>
+          <span class="badge badge-purple">Multi-omics</span>
+        </div>
+      </span>
+    </summary>
+    <div class="card-body">
+      <div class="field"><div class="field-label">Problem</div><div class="field-body">Long-chain alkanes (C24–C36) and polyethylene share structural features but few fungi have been molecularly characterized for their degradation; the secreted enzymatic arsenal remains poorly defined at the omics level.</div></div>
+      <div class="field"><div class="field-label">Methods</div><div class="field-body">Isolation of <em>A. parasiticus</em> MM36 from <em>Tenebrio molitor</em> gut; growth on C16 (hexadecane) or C24–C36 long-chain alkane (lcAlk) mixtures; genome sequencing and annotation; RNAseq at multiple time points comparing C16 vs. lcAlk; secretome profiling by LC-MS/MS to identify extracellular enzymes; PE modification assays using culture supernatants.</div></div>
+      <div class="field"><div class="field-label">Findings</div><div class="field-body">RNAseq revealed enrichment of <strong>oxidoreductase activities and carboxylic acid metabolism</strong> on lcAlk vs. C16; transmembrane transporters dominated day-2 responses; biosynthetic processes dominated day-3. Secretome LC-MS/MS identified key enzymes: <strong>multicopper oxidases, peroxidases, unspecific peroxygenase, and FAD-dependent monooxygenases</strong>. Hydrophobins and hydrophobic surface-binding proteins facilitated substrate contact. A model proposed: extracellular oxyfunctionalization → C=C functionalized intermediates → uptake via surface proteins → membrane transporters → intracellular catabolism.</div></div>
+      <div class="field"><div class="field-label">Takeaways</div><div class="field-body">The combination of RNAseq and secretome proteomics provides orthogonal evidence for the alkene functionalization cascade. Unspecific peroxygenase is an underappreciated enzyme family for initial C–H/C=C oxidation in long-chain substrates; hydrophobins are not merely structural but are transcriptionally regulated components of the uptake machinery.</div></div>
+      <div class="field"><div class="field-label">Limitations</div><div class="field-body">MM36 is from an insect gut — ecological relevance to open-environment contaminated soils is unclear; PE modification verified but complete mineralization not demonstrated; secretome only captures extracellular proteins, missing intracellular catabolic enzymes.</div></div>
+    </div>
+  </details>
+
+  <!-- Paper 7 -->
+  <details>
+    <summary>
+      <span>
+        Integrative Transcriptome + Metabolome of <em>Amylostereum areolatum</em> for Terpenoid (Multi-alkene) Biosynthesis Genes
+        <div class="card-meta">Wang et al. &nbsp;·&nbsp; <em>J. Fungi</em> 2025 &nbsp;·&nbsp;
+          <span class="badge badge-green">RNA-seq + Metabolomics</span>
+          <span class="badge badge-teal">Terpenoids / sesqui- &amp; triterpenoids</span>
+          <span class="badge badge-purple">Multi-omics</span>
+        </div>
+      </span>
+    </summary>
+    <div class="card-body">
+      <div class="field"><div class="field-label">Problem</div><div class="field-body">Terpenoids — the most structurally diverse class of natural products, all containing polyene/alkene backbones — are produced by <em>Amylostereum areolatum</em>, a mutualist of the wood wasp <em>Sirex noctilio</em>, but the biosynthetic gene network and metabolite profile were completely unknown.</div></div>
+      <div class="field"><div class="field-label">Methods</div><div class="field-body">Integrated transcriptome (Illumina NovaSeq) and metabolome (LC-MS + SPME-GC-MS) analysis across three fungal developmental stages (7, 14, and 21 days); differential expression analysis; enzyme–metabolite correlation; pathway mapping to KEGG terpenoid biosynthesis routes.</div></div>
+      <div class="field"><div class="field-label">Findings</div><div class="field-body">103 terpenoids identified (triterpenoids and sesquiterpenoids most diverse). 26 biosynthesis-associated genes detected; 11 showed differential expression across developmental stages. Key regulators: <em><strong>HMGS1</strong></em> and <em><strong>HMGR2</strong></em> (MVA pathway rate-limiting steps) and <em><strong>AaTPS1–3</strong></em> (terpene synthases catalyzing the initial alkene-forming cyclisation reactions). All three TPS genes showed temporal peak expression at 14 days.</div></div>
+      <div class="field"><div class="field-label">Takeaways</div><div class="field-body">The terpene synthase step — which forms the initial C=C bond in the terpenoid skeleton — is the coordinated transcriptional hub. HMGS1/HMGR2 upstream regulation of MVA flux is transcriptionally separable from the downstream TPS alkene-forming step. Multi-omics enables correlation of transcript dynamics to metabolite accumulation, confirming enzymatic bottlenecks.</div></div>
+      <div class="field"><div class="field-label">Limitations</div><div class="field-body">Definitive structural confirmation of terpenoid identities requires NMR; mass spectrometry–based IDs carry isomeric ambiguity. Functional validation of AaTPS1–3 by heterologous expression is pending.</div></div>
+    </div>
+  </details>
+
+  <!-- ═══════════════ CROSS-PAPER OBSERVATIONS ═══════════════ -->
+  <h2>Cross-Paper Observations</h2>
+  <div class="obs-grid">
+
+    <div class="obs-card">
+      <h3>Methodological Patterns</h3>
+      <ul>
+        <li>Illumina short-read RNA-seq (NextSeq, NovaSeq) is the universal transcriptomic platform across all studies.</li>
+        <li>Multi-omics integration (RNAseq + proteomics/metabolomics) is the emerging gold standard: Siaperas 2025 and Wang 2025 both combine transcriptomics with a second omics layer for orthogonal validation.</li>
+        <li>qRT-PCR of candidate gene families (Alharbi 2022) remains practical when a targeted gene family is the focus rather than discovery-mode profiling.</li>
+        <li>GC-MS / LC-MS/MS provides the chemical evidence tying transcriptomic findings to actual degradation products.</li>
+      </ul>
+    </div>
+
+    <div class="obs-card">
+      <h3>Consensus Enzyme Findings</h3>
+      <ul>
+        <li><strong>CYP450s</strong> are upregulated in every aerobic alkene-degradation system — they catalyze the initial epoxidation of C=C bonds.</li>
+        <li><strong>Multicopper oxidases / laccases</strong> appear consistently for aromatic and polyene substrates (Gao 2022, Zhang 2023, Siaperas 2025).</li>
+        <li><strong>Aldehyde dehydrogenases</strong> (terminal oxidation step) co-expressed with CYP450 in fuel degradation (Krohn 2021).</li>
+        <li><strong>Terpene synthases (TPS)</strong> form the alkene backbone de novo — the reverse of degradation, but governed by the same carbon-skeleton C=C chemistry (Wang 2025).</li>
+      </ul>
+    </div>
+
+    <div class="obs-card">
+      <h3>Active Debates</h3>
+      <ul>
+        <li><strong>CYP450 centrality vs. peroxidase-first models:</strong> CYP450 inhibitor reduced BaP degradation by only 6% in <em>Phlebia acerina</em> (Zhang 2023) — contrasting with <em>Penicillium digitatum</em> where CYP450 is rate-limiting for limonene epoxidation (Zhang 2020). Substrate ring number and fungal lineage may dictate which enzyme family leads.</li>
+        <li><strong>Gene expression vs. protein secretion:</strong> Siaperas 2025 found mismatch between RNAseq-predicted enzymes and secretome-detected proteins, echoing the disconnect reported in Penicillium (Zhang 2020). Post-transcriptional regulation is under-studied.</li>
+        <li><strong>Laccase role in alkene attack:</strong> Some studies position laccase as a direct alkene oxidase; others assign it a peripheral depolymerisation or mediator-cycling role.</li>
+      </ul>
+    </div>
+
+    <div class="obs-card">
+      <h3>Open Questions</h3>
+      <ul>
+        <li>Complete metabolic pathway reconstruction for terminal alkene (C=C) degradation — intermediates between initial oxidation and TCA-cycle entry remain uncharacterized in most fungi.</li>
+        <li>The role of <strong>unspecific peroxygenases (UPOs)</strong> in alkene epoxidation — identified by Siaperas 2025 but absent from earlier studies; likely underdetected.</li>
+        <li>Why do some fungi (Phlebia, Aspergillus) require thousands of gene-expression changes to degrade a single alkene substrate? Stress response co-activation vs. genuine metabolic rewiring.</li>
+        <li>Ecological context: are these transcriptional programs replicated in field soils, or are they laboratory artefacts of high substrate concentrations?</li>
+        <li>Substrate specificity determinants in TPS and CYP52/CYP450 enzymes — what governs alkene chain-length and ring-structure preference?</li>
+      </ul>
+    </div>
+
+    <div class="obs-card">
+      <h3>Alkene Substrate Coverage</h3>
+      <ul>
+        <li><strong>Terminal/chain alkenes:</strong> Kerosene (Krohn 2021), polyethylene (Gao 2022, Siaperas 2025)</li>
+        <li><strong>Cyclic alkene terpenes:</strong> Limonene (Zhang 2020), sesqui/triterpenoids (Wang 2025)</li>
+        <li><strong>Aromatic PAH alkenes:</strong> Crude oil aromatics (Alharbi 2022), benzo[a]pyrene (Zhang 2023)</li>
+        <li>Notably absent: vinyl chloride, styrene, isoprene — open niches for future transcriptomic study.</li>
+      </ul>
+    </div>
+
+    <div class="obs-card">
+      <h3>Key Genes / Gene Families Identified</h3>
+      <ul>
+        <li><em>PDIDSM_67430</em> (CYP450 reductase, 132× up) — limonene C=C epoxidation (<em>P. digitatum</em>)</li>
+        <li><em>Lcc11</em>, <em>Lcc12</em> — crude oil-responsive laccase paralogues (<em>A. terreus</em>)</li>
+        <li><em>HMGS1</em>, <em>HMGR2</em>, <em>AaTPS1–3</em> — MVA + terpene synthase hub (<em>A. areolatum</em>)</li>
+        <li>Aldehyde dehydrogenases + CYP450 — fuel alkene oxidation in <em>Amorphotheca</em></li>
+        <li>Multicopper oxidases, unspecific peroxygenase, FAD-monooxygenases — long-chain alkene functionalization (<em>A. parasiticus</em>)</li>
+        <li>153 laccase/peroxidase/hydroxylase candidates — PE polyene degradation (<em>A. alternata</em>)</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- ═══════════════ REFERENCE TABLE ═══════════════ -->
+  <h2>Reference Table</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Title (abbreviated)</th>
+          <th>Year</th>
+          <th>Venue</th>
+          <th>Key Method</th>
+          <th>1-line Conclusion</th>
+          <th>DOI / PMID</th>
+          <th>APA Citation</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Deep (Meta)genomics and (Meta)transcriptome of Fungal–Bacterial Consortia in Aircraft Kerosene Tanks</td>
+          <td>2021</td>
+          <td><em>Front. Microbiol.</em></td>
+          <td>Metagenomics + metatranscriptomics (Illumina NextSeq)</td>
+          <td>Fungal aldehyde dehydrogenases and CYP450 are actively transcribed in kerosene biofilms in situ.</td>
+          <td><a href="https://doi.org/10.3389/fmicb.2021.722259" target="_blank">10.3389/fmicb.2021.722259</a></td>
+          <td>Krohn, I., et al. (2021). <em>Frontiers in Microbiology, 12</em>, 722259.</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>A Marine Fungus <em>Alternaria alternata</em> FB1 Efficiently Degrades Polyethylene</td>
+          <td>2022</td>
+          <td><em>J. Hazardous Materials</em></td>
+          <td>Transcriptomics + recombinant enzyme validation</td>
+          <td>153 upregulated enzymes (laccase, peroxidase, hydroxylase) identified; 95% PE molecular weight reduction in 120 days.</td>
+          <td><a href="https://doi.org/10.1016/j.jhazmat.2022.128617" target="_blank">10.1016/j.jhazmat.2022.128617</a></td>
+          <td>Gao, R., Liu, R., &amp; Sun, C. (2022). <em>Journal of Hazardous Materials, 431</em>, 128617.</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Transcriptome Profiling of Laccase Genes in <em>Aspergillus terreus</em> during Crude Oil Biodegradation</td>
+          <td>2022</td>
+          <td><em>Biology (Basel)</em></td>
+          <td>qRT-PCR of 8 laccase paralogs; GC-MS degradation</td>
+          <td><em>Lcc11</em> and <em>Lcc12</em> are the Cu-ABTS-inducible paralogues driving hydrocarbon oxidation in <em>A. terreus</em>.</td>
+          <td><a href="https://doi.org/10.3390/biology11040564" target="_blank">10.3390/biology11040564</a></td>
+          <td>Alharbi, N. K., et al. (2022). <em>Biology, 11</em>(4), 564.</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>Biodegradation of Benzo[a]pyrene by <em>Phlebia acerina</em>: Genes Involved</td>
+          <td>2023</td>
+          <td><em>J. Fungi</em></td>
+          <td>RNA-seq + qPCR; surfactant enhancement assays</td>
+          <td>Transferases and binding proteins — not CYP450 — are the dominant transcriptomic response to BaP in <em>Phlebia</em>.</td>
+          <td><a href="https://doi.org/10.3390/jof9100978" target="_blank">10.3390/jof9100978</a></td>
+          <td>Zhang, W., et al. (2023). <em>Journal of Fungi, 9</em>(10), 978.</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>Genomic &amp; Transcriptomic Screening for Limonene Biotransformation Genes in <em>Penicillium digitatum</em></td>
+          <td>2020</td>
+          <td><em>Front. Microbiol.</em></td>
+          <td>Whole-genome seq + RNA-seq; CYP450 inhibitor validation</td>
+          <td>CYP450 reductase PDIDSM_67430 (132× up) is rate-limiting for limonene C=C epoxidation to α-terpineol.</td>
+          <td><a href="https://doi.org/10.3389/fmicb.2020.00744" target="_blank">10.3389/fmicb.2020.00744</a></td>
+          <td>Zhang, L.-L., et al. (2020). <em>Frontiers in Microbiology, 11</em>, 744.</td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td>Multi-omics of <em>Aspergillus parasiticus</em> on Long-Chain Alkanes in Relation to Polyethylene Modification</td>
+          <td>2025</td>
+          <td><em>Environ. Pollution</em></td>
+          <td>RNAseq + secretome LC-MS/MS; genome annotation</td>
+          <td>Multicopper oxidases, peroxygenase, and FAD-monooxygenases drive extracellular alkene functionalization before intracellular catabolism.</td>
+          <td>PMID: <a href="https://pubmed.ncbi.nlm.nih.gov/40345371/" target="_blank">40345371</a></td>
+          <td>Siaperas, R., Taxeidis, G., Gioti, A., Nikolaivits, E., &amp; Topakas, E. (2025). <em>Environmental Pollution</em>, in press.</td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td>Transcriptome &amp; Metabolome Analysis of Terpenoid Biosynthesis Genes in <em>Amylostereum areolatum</em></td>
+          <td>2025</td>
+          <td><em>J. Fungi</em></td>
+          <td>Illumina NovaSeq RNA-seq + LC-MS / SPME-GC-MS metabolomics</td>
+          <td>AaTPS1–3 terpene synthases and HMGS1/HMGR2 MVA-pathway regulators orchestrate terpenoid (alkene-backbone) biosynthesis.</td>
+          <td><a href="https://doi.org/10.3390/jof11050383" target="_blank">10.3390/jof11050383</a></td>
+          <td>Wang, L., et al. (2025). <em>Journal of Fungi, 11</em>(5), 383.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <footer>
+    Generated by Claude Code &nbsp;|&nbsp; Topic Explorer: PubMed Research Survey &nbsp;|&nbsp; 2026-05-28
+  </footer>
+
+</div>
+</body>
+</html>
