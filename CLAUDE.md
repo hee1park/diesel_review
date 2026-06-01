@@ -17,6 +17,7 @@ A custom PubMed skill is installed at `.claude/skills/topic-explorer-pubmed/`. I
 
 ```
 /topic-explorer-pubmed <research topic>
+/paper-summary <file path>
 ```
 
 ## Workflow

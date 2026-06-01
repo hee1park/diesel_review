@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hydrocarbon Degradation by Marine Fungi — Literature Survey</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #f5f7fa;
+      color: #222;
+      line-height: 1.65;
+      padding: 24px 16px 60px;
+    }
+    .container { max-width: 900px; margin: 0 auto; }
+
+    /* ── Header ── */
+    header {
+      background: linear-gradient(135deg, #1a4f72, #2e86c1);
+      color: #fff;
+      border-radius: 10px;
+      padding: 32px 28px 24px;
+      margin-bottom: 32px;
+    }
+    header h1 { font-size: 1.75rem; font-weight: 700; margin-bottom: 6px; }
+    header .subtitle { font-size: 1rem; opacity: 0.88; }
+    header .meta { margin-top: 14px; font-size: 0.85rem; opacity: 0.78; display: flex; gap: 24px; flex-wrap: wrap; }
+
+    /* ── Section titles ── */
+    h2 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #1a4f72;
+      border-bottom: 2px solid #2e86c1;
+      padding-bottom: 6px;
+      margin: 36px 0 18px;
+    }
+
+    /* ── Paper cards ── */
+    details {
+      background: #fff;
+      border: 1px solid #d6e4f0;
+      border-radius: 8px;
+      margin-bottom: 14px;
+      box-shadow: 0 1px 3px rgba(0,0,0,.06);
+      overflow: hidden;
+    }
+    summary {
+      padding: 16px 20px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.97rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      list-style: none;
+      position: relative;
+    }
+    summary::after {
+      content: "▶";
+      font-size: 0.75rem;
+      margin-left: auto;
+      flex-shrink: 0;
+      color: #2e86c1;
+      transition: transform 0.2s;
+      padding-top: 2px;
+    }
+    details[open] summary::after { transform: rotate(90deg); }
+    summary .badge {
+      display: inline-block;
+      background: #eaf4fb;
+      color: #1a5276;
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 20px;
+      white-space: nowrap;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    summary .badge.high { background: #d5f5e3; color: #1e8449; }
+    summary .badge.year { background: #fef9e7; color: #7d6608; }
+    .paper-body { padding: 4px 20px 20px; border-top: 1px solid #eaf2fb; }
+    .paper-body p { margin: 10px 0 0; font-size: 0.92rem; }
+    .paper-body strong { color: #1a4f72; }
+    .field-label {
+      display: block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #2e86c1;
+      margin-top: 14px;
+      margin-bottom: 2px;
+    }
+    .field-value { font-size: 0.92rem; }
+    .limit-box {
+      background: #fff8e1;
+      border-left: 3px solid #f39c12;
+      padding: 8px 12px;
+      border-radius: 0 4px 4px 0;
+      font-size: 0.88rem;
+      margin-top: 12px;
+    }
+
+    /* ── Observations ── */
+    .obs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    @media (max-width: 600px) { .obs-grid { grid-template-columns: 1fr; } }
+    .obs-card {
+      background: #fff;
+      border: 1px solid #d6e4f0;
+      border-radius: 8px;
+      padding: 16px;
+      box-shadow: 0 1px 3px rgba(0,0,0,.05);
+    }
+    .obs-card h3 { font-size: 0.9rem; color: #1a4f72; margin-bottom: 6px; }
+    .obs-card p { font-size: 0.88rem; }
+
+    /* ── Reference table ── */
+    .table-wrap { overflow-x: auto; margin-top: 10px; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
+    thead tr { background: #1a4f72; color: #fff; }
+    th { padding: 10px 12px; text-align: left; font-weight: 600; white-space: nowrap; }
+    tbody tr:nth-child(even) { background: #f0f7fd; }
+    td { padding: 9px 12px; border-bottom: 1px solid #dce8f1; vertical-align: top; }
+    td a { color: #2e86c1; text-decoration: none; }
+    td a:hover { text-decoration: underline; }
+    .apa { font-size: 0.79rem; color: #555; line-height: 1.5; }
+
+    footer { text-align: center; margin-top: 40px; font-size: 0.8rem; color: #888; }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- ── HEADER ── -->
+  <header>
+    <h1>Hydrocarbon Degradation by Marine Fungi</h1>
+    <div class="subtitle">A Systematic PubMed Literature Survey</div>
+    <div class="meta">
+      <span>📄 8 papers surveyed</span>
+      <span>📅 Coverage: 2022–2025</span>
+      <span>🗓 Report date: 1 June 2026</span>
+      <span>🔎 Source: PubMed / PMC</span>
+    </div>
+  </header>
+
+  <!-- ── PAPER SUMMARIES ── -->
+  <h2>Paper Summaries</h2>
+
+  <!-- Paper 1 -->
+  <details>
+    <summary>
+      <span>
+        1. Marine Fungi Select and Transport Aerobic and Anaerobic Bacteria from PAH-Contaminated Sediments
+        <br><span style="font-weight:400;font-size:0.84rem;color:#555;">Álvarez-Barragán et al., 2023 · <em>mBio</em></span>
+      </span>
+      <span class="badge high">mBio</span>
+    </summary>
+    <div class="paper-body">
+      <span class="field-label">Problem</span>
+      <div class="field-value">It was unclear whether fungal mycelia physically select and recruit specific bacterial taxa during transport through PAH-contaminated marine sediments, or whether bacterial dispersal through those environments is non-specific.</div>
+
+      <span class="field-label">Methods</span>
+      <div class="field-value">Petri-dish barrier experiments (air gaps, wet sand, sediment, wax) were used to assess translocation. Two marine fungi — <em>Alternaria destruens</em> F10.81 and <em>Fusarium pseudonygamai</em> F5.76 — with distinct PAH uptake strategies served as mycelial networks. Bacterial communities were tracked at four spatial points using 16S rRNA amplicon sequencing.</div>
+
+      <span class="field-label">Key Findings</span>
+      <div class="field-value"><em>A. destruens</em> selectively recruited four bacterial taxa including the strict anaerobe <em>Spirochaeta litoralis</em>, whereas <em>F. pseudonygamai</em> showed minimal selectivity. Oxygen depletion during mycelial growth created anoxic niches enabling anaerobic bacterial survival. Bacterial motility and surface hydrophobicity governed recruitment specificity.</div>
+
+      <span class="field-label">Takeaways</span>
+      <div class="field-value">Fungal hyphae act as selective "microbial highways," shaping bacterial community assembly in contaminated sediments. This selectivity has direct implications for engineering fungal-bacterial consortia for bioremediation.</div>
+
+      <div class="limit-box">⚠ <strong>Limitations:</strong> Laboratory conditions differ substantially from natural sediment dynamics; the dominance of biofilm-associated microbes in situ may alter translocation patterns. Field validation is needed.</div>
+
+      <p><strong>DOI:</strong> <a href="https://doi.org/10.1128/mbio.02761-22" target="_blank">10.1128/mbio.02761-22</a></p>
+    </div>
+  </details>
+
+  <!-- Paper 2 -->
+  <details>
+    <summary>
+      <span>
+        2. Transcriptomic Profiling of <em>Debaryomyces hansenii</em> Reveals Detoxification and Stress Responses to Benzo(a)pyrene
+        <br><span style="font-weight:400;font-size:0.84rem;color:#555;">Padilla-Garfias et al., 2025 · <em>Applied and Environmental Microbiology</em></span>
+      </span>
+      <span class="badge high">AEM</span>
+    </summary>
+    <div class="paper-body">
+      <span class="field-label">Problem</span>
+      <div class="field-value">Benzo(a)pyrene (BaP) is a persistent carcinogenic PAH accumulating in marine environments. The molecular mechanisms by which the halotolerant marine yeast <em>D. hansenii</em> detoxifies BaP remained largely unknown.</div>
+
+      <span class="field-label">Methods</span>
+      <div class="field-value">Growth assays on solid and liquid media with 100 ppm BaP; BaP degradation kinetics measured by spectrofluorometry and GC-MS; genome-wide RNA-Seq under glucose-limited (YNB + BaP) and cometabolic (YNBG + BaP) conditions; GO and KEGG pathway enrichment; RT-qPCR validation.</div>
+
+      <span class="field-label">Key Findings</span>
+      <div class="field-value"><em>D. hansenii</em> eliminated &gt;70% of BaP within 3 days (73.1% under cometabolic conditions). RNA-Seq revealed 1,179 upregulated genes; key inductions included cytochrome P450 monooxygenases, epoxide hydrolases, and glutathione S-transferases. The yeast activated a five-tiered coordinated response: xenobiotic activation → antioxidant defense → metabolite conjugation/export → catabolism → membrane remodeling.</div>
+
+      <span class="field-label">Takeaways</span>
+      <div class="field-value"><em>D. hansenii</em> mounts a comprehensive genome-wide response to PAH stress, making it a strong eukaryotic model and practical bioremediation candidate for marine BaP contamination, especially given its salt tolerance.</div>
+
+      <div class="limit-box">⚠ <strong>Limitations:</strong> Whether BaP is truly mineralized or only conjugated/sequestered is unclear. Metabolite fate tracking and field-scale testing are absent. Findings apply specifically to 100 ppm BaP.</div>
+
+      <p><strong>DOI:</strong> <a href="https://doi.org/10.1128/aem.01557-25" target="_blank">10.1128/aem.01557-25</a></p>
+    </div>
+  </details>
+
+  <!-- Paper 3 -->
+  <details>
+    <summary>
+      <span>
+        3. Crude-Oil Degradation Capabilities by Microscopic Fungi of Deep-Sea Hydrothermal Vents
+        <br><span style="font-weight:400;font-size:0.84rem;color:#555;">Salcedo et al., 2025 · <em>Environmental Science and Pollution Research International</em></span>
+      </span>
+      <span class="badge year">2025</span>
+    </summary>
+    <div class="paper-body">
+      <span class="field-label">Problem</span>
+      <div class="field-value">Conventional oil-spill cleanup methods are often ineffective or damaging. Extremophile fungi from deep-sea hydrothermal vents may possess unique hydrocarbon-degrading capabilities shaped by adaptation to extreme conditions.</div>
+
+      <span class="field-label">Methods</span>
+      <div class="field-value">Six fungal isolates from deep-sea hydrothermal vents were subjected to tolerance bioassays (light and heavy crude oil as sole carbon sources), biodegradation bioassays, stable isotope (¹³C/¹⁵N) analysis to track assimilation of oil-derived carbon, and gas chromatography to monitor heavy crude oil compositional changes.</div>
+
+      <span class="field-label">Key Findings</span>
+      <div class="field-value">All six isolates tolerated crude oil exposure, with some showing enhanced growth. <em>Penicillium miczynskii</em> (isolate F) achieved a 157% growth rate above controls in light crude oil. Stable isotope data confirmed assimilation of oil-derived carbon. Both deeply tested isolates effectively degraded medium- and long-chain n-alkanes.</div>
+
+      <span class="field-label">Takeaways</span>
+      <div class="field-value">Deep-sea fungi are genuine bioremediation candidates with extremophile adaptations (pressure, temperature, low-nutrient tolerance) that may be advantageous in deep-water oil spill scenarios. <em>P. miczynskii</em> F is the most promising isolate identified.</div>
+
+      <div class="limit-box">⚠ <strong>Limitations:</strong> Only six isolates tested; light crude oil compositional analysis was incomplete due to insufficient sample volume. Culturing under pressure-simulating conditions and biosafety considerations for field deployment remain unresolved.</div>
+
+      <p><strong>DOI:</strong> <a href="https://doi.org/10.1007/s11356-025-36879-2" target="_blank">10.1007/s11356-025-36879-2</a></p>
+    </div>
+  </details>
+
+  <!-- Paper 4 -->
+  <details>
+    <summary>
+      <span>
+        4. Isolation and Characterization of <em>Candida tropicalis</em> B: A Promising Yeast for Petroleum Biodegradation in Marine Environments
+        <br><span style="font-weight:400;font-size:0.84rem;color:#555;">Hegazy et al., 2024 · <em>Microbial Cell Factories</em></span>
+      </span>
+      <span class="badge high">MCF</span>
+    </summary>
+    <div class="paper-body">
+      <span class="field-label">Problem</span>
+      <div class="field-value">Petroleum contamination poses severe ecological hazards to marine ecosystems. The study sought indigenous yeast strains from oil-contaminated Egyptian coastal waters capable of aerobically degrading crude oil.</div>
+
+      <span class="field-label">Methods</span>
+      <div class="field-value">Sampling from Abu-Qir Gulf (Alexandria, Egypt); 18S rRNA molecular identification; physiological characterization across pH 4–11, temperature, and salinity gradients; hydrocarbon degradation quantified by HPLC; Plackett–Burman and Box-Behnken factorial design optimization; immobilization experiments on wood-chip carriers.</div>
+
+      <span class="field-label">Key Findings</span>
+      <div class="field-value"><em>C. tropicalis</em> B grew across pH 4–11 and 1–12% salinity. Naphthalene removal reached 97.4–98.6% at 500–1,000 mg/L. Phenol removal was 79.5%. Oil concentration was the primary factor affecting degradation efficiency. Immobilization on thin wood chips achieved 77.5% crude oil removal, outperforming thick chips due to greater surface area for cell attachment.</div>
+
+      <span class="field-label">Takeaways</span>
+      <div class="field-value"><em>C. tropicalis</em> B offers a physiologically versatile, immobilizable platform for marine oil bioremediation. Statistical optimization and immobilization strategies substantially improve performance and provide a scalable technology pathway.</div>
+
+      <div class="limit-box">⚠ <strong>Limitations:</strong> Only a single-strain system; consortia approaches unexplored. Wood chip adsorption complicates attribution of removal to biological degradation vs. physical sorption. No real-world marine application data.</div>
+
+      <p><strong>DOI:</strong> <a href="https://doi.org/10.1186/s12934-023-02292-y" target="_blank">10.1186/s12934-023-02292-y</a></p>
+    </div>
+  </details>
+
+  <!-- Paper 5 -->
+  <details>
+    <summary>
+      <span>
+        5. PAH and Petroleum Hydrocarbon Biodegradation by Indigenous Fungi from Crude Oil-Contaminated Soil (Iran)
+        <br><span style="font-weight:400;font-size:0.84rem;color:#555;">Fallahi et al., 2023 · <em>Scientific Reports</em></span>
+      </span>
+      <span class="badge high">Sci Reports</span>
+    </summary>
+    <div class="paper-body">
+      <span class="field-label">Problem</span>
+      <div class="field-value">PAHs from petroleum extraction and spills are persistent soil and groundwater contaminants with mutagenic and carcinogenic properties. Identification of locally adapted fungi capable of degrading these compounds offers an environmentally sustainable remediation approach.</div>
+
+      <span class="field-label">Methods</span>
+      <div class="field-value">265 fungal isolates from crude oil-contaminated and pristine soils at the Yadavaran oil field, Iran; ITS sequencing for identification; DCPIP colorimetric screening for degradation potential; GC-MS quantification of PAH degradation over 47 days in culture; in-soil bioassay over 60 days with sterilized artificially contaminated soil.</div>
+
+      <span class="field-label">Key Findings</span>
+      <div class="field-value"><em>Alternaria tenuissima</em> (5c-12) and <em>Epicoccum nigrum</em> (3b-1) were the top performers, degrading &gt;70% of long-chain hydrocarbons (C8–C16 n-alkanes, Pristane) in soil. In liquid culture, both achieved 93–99% removal of high-MW PAHs including pyrene and benzo(a)pyrene within 47 days. Novel finding: isolates from non-contaminated soils performed equally well as those from contaminated sites.</div>
+
+      <span class="field-label">Takeaways</span>
+      <div class="field-value">Mycoremediation using <em>A. tenuissima</em> and <em>E. nigrum</em> is a validated cost-effective strategy for petroleum-impacted environments. Hydrocarbon-degrading potential is not confined to chronically contaminated habitats, broadening the candidate pool for remediation applications.</div>
+
+      <div class="limit-box">⚠ <strong>Limitations:</strong> Soil assay evaluated only the top two isolates; the remaining promising candidates were not tested. Spore-based inoculum not assessed due to limited spore production. Study environment is terrestrial, not marine.</div>
+
+      <p><strong>DOI:</strong> <a href="https://doi.org/10.1038/s41598-023-49630-z" target="_blank">10.1038/s41598-023-49630-z</a></p>
+    </div>
+  </details>
+
+  <!-- Paper 6 -->
+  <details>
+    <summary>
+      <span>
+        6. Marine-Derived Fungi from Polluted Saline Environments for Enzymatic Hydrocarbon Remediation
+        <br><span style="font-weight:400;font-size:0.84rem;color:#555;">Hkiri et al., 2023 · <em>Brazilian Journal of Microbiology</em></span>
+      </span>
+      <span class="badge year">2023</span>
+    </summary>
+    <div class="paper-body">
+      <span class="field-label">Problem</span>
+      <div class="field-value">Petroleum hydrocarbon contamination of Mediterranean marine environments requires remediation approaches adapted to saline conditions. Ligninolytic enzyme-producing marine fungi are hypothesized to degrade crude oil in coastal saltwater settings.</div>
+
+      <span class="field-label">Methods</span>
+      <div class="field-value">50 fungal isolates from Tunisian Mediterranean coastal sites; guaiacol-supplemented media screening; ITS rDNA sequencing of four promising strains; enzyme production optimization by 2⁷⁻⁴ fractional factorial design; crude oil degradation assessed gravimetrically over 25 days; metabolite characterization by FTIR and GC-MS.</div>
+
+      <span class="field-label">Key Findings</span>
+      <div class="field-value">Four strains identified: <em>Chaetomium jodhpurense</em>, <em>C. maderasense</em>, <em>Paraconiothyrium variabile</em>, and <em>Phoma betae</em>. <em>P. variabile</em> achieved the highest crude oil removal (48.3%). Enzyme activities reached 2,730 U/L (MnP), 410 U/L (LiP), and 168.5 U/L (laccase). FTIR and GC-MS confirmed hydrocarbon biodegradation under ecologically realistic saline conditions.</div>
+
+      <span class="field-label">Takeaways</span>
+      <div class="field-value">Halotolerant marine fungi producing ligninolytic enzymes are practical bioremediation candidates for coastal oil spills. Enzymatic optimization using factorial design efficiently identifies maximal-activity conditions without extensive trial-and-error.</div>
+
+      <div class="limit-box">⚠ <strong>Limitations:</strong> 25-day incubation window may underestimate longer-term degradation potential; 1% crude oil concentration may not reflect real contamination levels; field-scale applicability untested.</div>
+
+      <p><strong>DOI:</strong> <a href="https://doi.org/10.1007/s42770-023-01049-4" target="_blank">10.1007/s42770-023-01049-4</a></p>
+    </div>
+  </details>
+
+  <!-- Paper 7 -->
+  <details>
+    <summary>
+      <span>
+        7. DhDIT2 Encodes a <em>Debaryomyces hansenii</em> Cytochrome P450 Involved in Benzo(a)pyrene Degradation
+        <br><span style="font-weight:400;font-size:0.84rem;color:#555;">Padilla-Garfias et al., 2022 · <em>Journal of Fungi</em></span>
+      </span>
+      <span class="badge year">2022</span>
+    </summary>
+    <div class="paper-body">
+      <span class="field-label">Problem</span>
+      <div class="field-value">PAHs including BaP are persistent and toxic environmental pollutants; the specific enzymatic machinery enabling yeast-based PAH degradation was not well characterized at the gene level.</div>
+
+      <span class="field-label">Methods</span>
+      <div class="field-value">Four yeast species assessed for BaP metabolization under varying temperature and concentration conditions; cytochrome P450 (CYP) inhibitor (piperonyl butoxide) assay; genomic identification of CYP genes; heterologous expression of candidate gene <em>DhDIT2</em> in <em>Saccharomyces cerevisiae</em> mutant strains.</div>
+
+      <span class="field-label">Key Findings</span>
+      <div class="field-value">All four yeasts degraded &gt;70% of BaP; <em>D. hansenii</em> achieved 84% degradation, the highest. CYP inhibition nearly abolished degradation, confirming CYP centrality. The <em>DhDIT2</em> gene (encoding CYP52A44) was identified as the key effector; its heterologous expression in <em>S. cerevisiae</em> restored degradation capacity.</div>
+
+      <span class="field-label">Takeaways</span>
+      <div class="field-value">CYP52A44 encoded by <em>DhDIT2</em> is the primary enzyme enabling BaP degradation in <em>D. hansenii</em>. The gene is transferable, making engineered <em>S. cerevisiae</em> strains potentially viable for mycoremediation in marine environments where <em>D. hansenii</em>'s salt tolerance is advantageous.</div>
+
+      <div class="limit-box">⚠ <strong>Limitations:</strong> Laboratory only; temperature constraints (growth inhibited at 37°C) may limit deployment. Full mineralization not demonstrated; field applicability unvalidated.</div>
+
+      <p><strong>DOI:</strong> <a href="https://doi.org/10.3390/jof8111150" target="_blank">10.3390/jof8111150</a></p>
+    </div>
+  </details>
+
+  <!-- Paper 8 -->
+  <details>
+    <summary>
+      <span>
+        8. Microbial Hydrocarbon Degradation in Guaymas Basin — Roles and Interactions of Fungi and Sulfate-Reducing Bacteria
+        <br><span style="font-weight:400;font-size:0.84rem;color:#555;">Edgcomb et al., 2022 · <em>Frontiers in Microbiology</em></span>
+      </span>
+      <span class="badge year">2022</span>
+    </summary>
+    <div class="paper-body">
+      <span class="field-label">Problem</span>
+      <div class="field-value">Bacterial and archaeal hydrocarbon degraders in deep-sea hydrothermal settings are relatively well studied, but diverse fungi are increasingly detected in such environments and their functional roles and interactions with sulfate-reducing bacteria remain largely unexplored.</div>
+
+      <span class="field-label">Methods</span>
+      <div class="field-value">ITS and 18S rRNA amplicon sequencing of Guaymas Basin hydrothermal sediments; cultivation experiments on hydrothermal and non-hydrothermal sediments; co-culture experiments pairing fungal isolates with sulfate-reducing bacterial enrichments; long-term incubation with periodic oxygen additions to simulate in situ redox cycling.</div>
+
+      <span class="field-label">Key Findings</span>
+      <div class="field-value">12 distinct fungal isolates (Ascomycota and Basidiomycota) were successfully cultivated from Guaymas Basin sediments. A <em>Rhodotorula</em> isolate remained viable on naphthalene under anaerobic conditions for &gt;3 weeks. Known hydrocarbon-degrading genera and chytrids were detected. ~200 unique isolates are under evaluation for biosurfactant production. Fungal-bacterial syntrophic interactions were hypothesized but not yet experimentally resolved.</div>
+
+      <span class="field-label">Takeaways</span>
+      <div class="field-value">Marine fungi likely play underappreciated roles in deep-sea hydrocarbon cycling, potentially functioning as biosurfactant producers and syntrophic partners for sulfate-reducing bacteria. Their capacity to create anoxic microniches may enable anaerobic degradation pathways.</div>
+
+      <div class="limit-box">⚠ <strong>Limitations:</strong> Primarily a hypothesis-generating perspective paper; co-culture experiments were ongoing at publication (~8 months). Conclusions about fungal-bacterial syntrophy are preliminary. Published in Frontiers (open peer review).</div>
+
+      <p><strong>DOI:</strong> <a href="https://doi.org/10.3389/fmicb.2022.831828" target="_blank">10.3389/fmicb.2022.831828</a></p>
+    </div>
+  </details>
+
+  <!-- ── CROSS-PAPER OBSERVATIONS ── -->
+  <h2>Cross-Paper Observations</h2>
+  <div class="obs-grid">
+
+    <div class="obs-card">
+      <h3>🔬 Methodological Convergence</h3>
+      <p>ITS/18S rRNA sequencing is the universal standard for fungal identification across all studies. GC-MS is the dominant analytical technique for confirming hydrocarbon removal. Gravimetric and spectrofluorometric assays are common for bulk degradation assessment. A clear trend toward factorial design-based optimization (Plackett–Burman, Box-Behnken) distinguishes more quantitatively rigorous applied studies.</p>
+    </div>
+
+    <div class="obs-card">
+      <h3>🌊 Habitat Diversity as a Resource</h3>
+      <p>Productive strains emerge from diverse marine niches — shallow Mediterranean coastal waters, deep-sea hydrothermal vents, oil-contaminated gulf sediments, and even non-contaminated terrestrial soils adjacent to oil fields (Fallahi et al.). This breadth challenges the assumption that chronic exposure selects the best degraders and expands the candidate library for applied bioremediation.</p>
+    </div>
+
+    <div class="obs-card">
+      <h3>⚗️ Enzymatic Mechanisms: Consensus and Debate</h3>
+      <p>CYP monooxygenases are uniformly identified as primary initiators of PAH degradation (Padilla-Garfias 2022, 2025; Fallahi et al. 2023). Ligninolytic enzymes (MnP, LiP, laccase) dominate crude-oil/aliphatic degradation (Hkiri et al. 2023). There is debate whether fungi achieve true mineralization or primarily conjugate/export PAHs — the Padilla-Garfias 2025 transcriptomic study explicitly flags this gap as unresolved.</p>
+    </div>
+
+    <div class="obs-card">
+      <h3>🔗 Fungal-Bacterial Synergy</h3>
+      <p>Multiple papers converge on fungi-bacteria interactions as a critical force multiplier. Álvarez-Barragán et al. (2023) directly demonstrate fungal mycelial networks as selective bacterial highways. Edgcomb et al. (2022) hypothesize syntrophic partnerships in deep-sea settings. Antón-Herrero et al. describe "fungal pipelines" for nutrient transport. Engineered consortia leveraging this selectivity appear to be the most promising path to real-world application.</p>
+    </div>
+
+    <div class="obs-card">
+      <h3>📏 Scale-Up Gap</h3>
+      <p>Virtually all studies are laboratory-scale, and no paper in this survey reports a field pilot or in situ marine trial. Immobilization (Hegazy et al., wood chips) and spent mushroom substrate are emerging as cost-effective carrier strategies, but the translation from mesocosm to open ocean or coastal sediment remains entirely open. This is the most consistent and critical limitation across the literature.</p>
+    </div>
+
+    <div class="obs-card">
+      <h3>❓ Open Questions</h3>
+      <p>(1) Can deep-sea extremophile fungi be cultured under in situ pressures for applied use? (2) Does fungal-mediated PAH transformation yield non-toxic metabolites, or simply different toxins? (3) How do salinity, temperature, and nutrient limitation interact to determine in situ degradation rates? (4) Can the <em>DhDIT2</em> gene be successfully expressed in robust industrial strains for open-water application?</p>
+    </div>
+
+  </div>
+
+  <!-- ── REFERENCE TABLE ── -->
+  <h2>Reference Table</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Title</th>
+          <th>Year</th>
+          <th>Venue</th>
+          <th>Key Method</th>
+          <th>1-Line Conclusion</th>
+          <th>DOI</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Marine Fungi Select and Transport Bacteria from PAH Sediments</td>
+          <td>2023</td>
+          <td><em>mBio</em></td>
+          <td>Barrier translocation + 16S rRNA amplicons</td>
+          <td>Fungal hyphae selectively recruit specific bacteria, including strict anaerobes, enabling community engineering.</td>
+          <td><a href="https://doi.org/10.1128/mbio.02761-22" target="_blank">10.1128/mbio.02761-22</a></td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Transcriptomic Profiling of <em>D. hansenii</em> for BaP Detoxification</td>
+          <td>2025</td>
+          <td><em>Appl Environ Microbiol</em></td>
+          <td>RNA-Seq + GC-MS degradation kinetics</td>
+          <td><em>D. hansenii</em> eliminates &gt;70% BaP in 3 days via a coordinated five-tier genomic response.</td>
+          <td><a href="https://doi.org/10.1128/aem.01557-25" target="_blank">10.1128/aem.01557-25</a></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Crude-Oil Degradation by Deep-Sea Hydrothermal Vent Fungi</td>
+          <td>2025</td>
+          <td><em>Environ Sci Pollut Res</em></td>
+          <td>Stable isotopes (¹³C) + GC</td>
+          <td><em>Penicillium miczynskii</em> from vents achieves 157% growth on light crude oil, confirming extremophile bioremediation potential.</td>
+          <td><a href="https://doi.org/10.1007/s11356-025-36879-2" target="_blank">10.1007/s11356-025-36879-2</a></td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td><em>Candida tropicalis</em> B for Marine Petroleum Biodegradation</td>
+          <td>2024</td>
+          <td><em>Microb Cell Fact</em></td>
+          <td>HPLC + Box-Behnken optimization + immobilization</td>
+          <td><em>C. tropicalis</em> B removes 97% naphthalene and 77% crude oil when immobilized on wood chips.</td>
+          <td><a href="https://doi.org/10.1186/s12934-023-02292-y" target="_blank">10.1186/s12934-023-02292-y</a></td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>PAH/Petroleum Biodegradation by Fungi from Crude Oil-Contaminated Soil</td>
+          <td>2023</td>
+          <td><em>Sci Rep</em></td>
+          <td>DCPIP screening + GC-MS + soil bioassay</td>
+          <td><em>Alternaria tenuissima</em> and <em>Epicoccum nigrum</em> degrade &gt;70% long-chain hydrocarbons and 93–99% high-MW PAHs.</td>
+          <td><a href="https://doi.org/10.1038/s41598-023-49630-z" target="_blank">10.1038/s41598-023-49630-z</a></td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td>Marine Fungi for Enzymatic Hydrocarbon Remediation (Tunisian Mediterranean)</td>
+          <td>2023</td>
+          <td><em>Braz J Microbiol</em></td>
+          <td>Ligninolytic enzyme assays + GC-MS</td>
+          <td><em>Paraconiothyrium variabile</em> degrades 48.3% crude oil while producing high MnP activity in saline conditions.</td>
+          <td><a href="https://doi.org/10.1007/s42770-023-01049-4" target="_blank">10.1007/s42770-023-01049-4</a></td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td>DhDIT2: A <em>D. hansenii</em> CYP450 for BaP Degradation</td>
+          <td>2022</td>
+          <td><em>J Fungi</em> (MDPI)</td>
+          <td>CYP inhibition + heterologous expression in <em>S. cerevisiae</em></td>
+          <td>CYP52A44 (DhDIT2) is the key gene enabling 84% BaP degradation and is functionally transferable.</td>
+          <td><a href="https://doi.org/10.3390/jof8111150" target="_blank">10.3390/jof8111150</a></td>
+        </tr>
+        <tr>
+          <td>8</td>
+          <td>Fungal–Bacterial Hydrocarbon Degradation in Guaymas Basin</td>
+          <td>2022</td>
+          <td><em>Front Microbiol</em> (Frontiers)</td>
+          <td>ITS/18S amplicons + cultivation + co-culture</td>
+          <td>Diverse fungi in deep-sea hydrothermal sediments likely partner syntrophically with sulfate-reducing bacteria for hydrocarbon cycling.</td>
+          <td><a href="https://doi.org/10.3389/fmicb.2022.831828" target="_blank">10.3389/fmicb.2022.831828</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ── APA CITATIONS ── -->
+  <h2>APA Citations</h2>
+  <ol style="padding-left:20px;margin-top:10px;">
+    <li class="apa" style="margin-bottom:8px;">Álvarez-Barragán, J., Cravo-Laureau, C., Xiong, B., Wick, L. Y., &amp; Duran, R. (2023). Marine fungi select and transport aerobic and anaerobic bacterial populations from polycyclic aromatic hydrocarbon-contaminated sediments. <em>mBio</em>, <em>14</em>(1), e02761-22. <a href="https://doi.org/10.1128/mbio.02761-22" target="_blank">https://doi.org/10.1128/mbio.02761-22</a></li>
+    <li class="apa" style="margin-bottom:8px;">Padilla-Garfias, F., Poot-Hernández, A. C., Araiza-Villanueva, M., Calahorra, M., Sánchez, N. S., &amp; Peña, A. (2025). Transcriptomic profiling of <em>Debaryomyces hansenii</em> reveals detoxification and stress responses to benzo(a)pyrene exposure. <em>Applied and Environmental Microbiology</em>, <em>91</em>(9), e01557-25. <a href="https://doi.org/10.1128/aem.01557-25" target="_blank">https://doi.org/10.1128/aem.01557-25</a></li>
+    <li class="apa" style="margin-bottom:8px;">Salcedo, D. L., Velez, P., López-Ramírez, S., Quiñones-Martínez, R., Barragán-Aroche, F., Soto, L. A., &amp; Figueroa, M. (2025). Crude-oil degradation capabilities by microscopic fungi of deep-sea hydrothermal vents. <em>Environmental Science and Pollution Research International</em>. Advance online publication. <a href="https://doi.org/10.1007/s11356-025-36879-2" target="_blank">https://doi.org/10.1007/s11356-025-36879-2</a></li>
+    <li class="apa" style="margin-bottom:8px;">Hegazy, G. E., Soliman, N. A., Farag, S., El-Helow, E. R., Yusef, H. Y., &amp; Abdel-Fattah, Y. R. (2024). Isolation and characterization of <em>Candida tropicalis</em> B: a promising yeast strain for biodegradation of petroleum oil in marine environments. <em>Microbial Cell Factories</em>, <em>23</em>, 12. <a href="https://doi.org/10.1186/s12934-023-02292-y" target="_blank">https://doi.org/10.1186/s12934-023-02292-y</a></li>
+    <li class="apa" style="margin-bottom:8px;">Fallahi, M., Sarempour, M., &amp; Mirzadi Gohari, A. (2023). Potential biodegradation of polycyclic aromatic hydrocarbons (PAHs) and petroleum hydrocarbons by indigenous fungi recovered from crude oil-contaminated soil in Iran. <em>Scientific Reports</em>, <em>13</em>, 22387. <a href="https://doi.org/10.1038/s41598-023-49630-z" target="_blank">https://doi.org/10.1038/s41598-023-49630-z</a></li>
+    <li class="apa" style="margin-bottom:8px;">Hkiri, N., Aounallah, F., Fouzai, K., Chouchani, C., &amp; Asses, N. (2023). Ability of marine-derived fungi isolated from polluted saline environment for enzymatic hydrocarbon remediation. <em>Brazilian Journal of Microbiology</em>. Advance online publication. <a href="https://doi.org/10.1007/s42770-023-01049-4" target="_blank">https://doi.org/10.1007/s42770-023-01049-4</a></li>
+    <li class="apa" style="margin-bottom:8px;">Padilla-Garfias, F., Sánchez, N. S., Calahorra, M., &amp; Peña, A. (2022). DhDIT2 encodes a <em>Debaryomyces hansenii</em> cytochrome P450 involved in benzo(a)pyrene degradation — A proposal for mycoremediation. <em>Journal of Fungi</em>, <em>8</em>(11), 1150. <a href="https://doi.org/10.3390/jof8111150" target="_blank">https://doi.org/10.3390/jof8111150</a></li>
+    <li class="apa" style="margin-bottom:8px;">Edgcomb, V. P., Teske, A. P., &amp; Mara, P. (2022). Microbial hydrocarbon degradation in Guaymas Basin — Exploring the roles and potential interactions of fungi and sulfate-reducing bacteria. <em>Frontiers in Microbiology</em>, <em>13</em>, 831828. <a href="https://doi.org/10.3389/fmicb.2022.831828" target="_blank">https://doi.org/10.3389/fmicb.2022.831828</a></li>
+  </ol>
+
+  <footer>
+    Generated by Claude Code · topic-explorer-pubmed skill · 1 June 2026
+  </footer>
+
+</div>
+</body>
+</html>
