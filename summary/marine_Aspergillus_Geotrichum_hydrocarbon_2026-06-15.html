@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hydrocarbon-Degrading Marine Aspergillus & Geotrichum — Literature Survey</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+         background: #f5f7fa; color: #1a202c; line-height: 1.65; font-size: 15px; }
+  .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.25rem 4rem; }
+
+  /* Header */
+  header { background: linear-gradient(135deg, #1a4e6e 0%, #2d7d5f 100%);
+           color: #fff; border-radius: 12px; padding: 2rem 2.25rem; margin-bottom: 2rem; }
+  header h1 { font-size: 1.6rem; font-weight: 700; line-height: 1.3; }
+  header .subtitle { margin-top: 0.5rem; font-size: 0.95rem; opacity: 0.85; }
+  header .meta { margin-top: 0.9rem; font-size: 0.82rem; opacity: 0.7; }
+
+  /* Alert box */
+  .alert { background: #fff8e1; border-left: 4px solid #f59e0b; border-radius: 8px;
+           padding: 0.9rem 1.1rem; margin-bottom: 2rem; font-size: 0.9rem; }
+  .alert strong { color: #92400e; }
+
+  /* Section headers */
+  h2 { font-size: 1.15rem; font-weight: 700; color: #1a4e6e; margin: 2rem 0 1rem;
+       padding-bottom: 0.4rem; border-bottom: 2px solid #d0e8f7; }
+  h3 { font-size: 1rem; font-weight: 600; color: #2d3748; margin: 1.2rem 0 0.4rem; }
+
+  /* Paper cards */
+  .paper-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 10px;
+                margin-bottom: 1.25rem; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+  .paper-card summary { padding: 1rem 1.25rem; cursor: pointer; list-style: none;
+                         display: flex; align-items: flex-start; gap: 0.75rem; }
+  .paper-card summary::-webkit-details-marker { display: none; }
+  .paper-card summary::before { content: "▶"; font-size: 0.7rem; color: #1a4e6e;
+                                  margin-top: 0.25rem; flex-shrink: 0; transition: transform 0.2s; }
+  .paper-card[open] summary::before { transform: rotate(90deg); }
+  .paper-card summary:hover { background: #f7fbff; }
+  .summary-text { flex: 1; }
+  .paper-title { font-weight: 600; color: #1a4e6e; font-size: 0.95rem; line-height: 1.4; }
+  .paper-meta { font-size: 0.8rem; color: #718096; margin-top: 0.25rem; }
+  .badge { display: inline-block; padding: 0.15rem 0.55rem; border-radius: 999px;
+           font-size: 0.72rem; font-weight: 600; margin-left: 0.4rem; }
+  .badge-marine { background: #dbeafe; color: #1e40af; }
+  .badge-aspergillus { background: #dcfce7; color: #166534; }
+  .badge-geotrichum { background: #fef3c7; color: #92400e; }
+  .badge-review { background: #f3e8ff; color: #6b21a8; }
+  .badge-retracted { background: #fee2e2; color: #991b1b; }
+
+  .paper-body { padding: 0 1.25rem 1.25rem; }
+  .field { margin-bottom: 0.65rem; }
+  .field-label { font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
+                 letter-spacing: 0.05em; color: #4a5568; margin-bottom: 0.2rem; }
+  .field-content { font-size: 0.88rem; color: #2d3748; }
+  .highlight { background: #fef9e7; border-left: 3px solid #f59e0b;
+               padding: 0.5rem 0.75rem; border-radius: 0 4px 4px 0;
+               margin: 0.5rem 0; font-size: 0.88rem; }
+
+  /* Table */
+  .table-wrap { overflow-x: auto; margin: 1rem 0 2rem; border-radius: 8px;
+                border: 1px solid #e2e8f0; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.8rem; }
+  th { background: #1a4e6e; color: #fff; padding: 0.6rem 0.75rem; text-align: left; font-weight: 600; }
+  td { padding: 0.55rem 0.75rem; border-bottom: 1px solid #e2e8f0; vertical-align: top; }
+  tr:last-child td { border-bottom: none; }
+  tr:nth-child(even) td { background: #f7faff; }
+  td a { color: #1a4e6e; text-decoration: none; }
+  td a:hover { text-decoration: underline; }
+
+  /* Observations box */
+  .obs-box { background: #fff; border: 1px solid #e2e8f0; border-radius: 10px;
+             padding: 1.25rem 1.5rem; margin-bottom: 1.25rem;
+             box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+  .obs-box ul { padding-left: 1.3rem; }
+  .obs-box li { margin-bottom: 0.5rem; font-size: 0.9rem; }
+
+  /* Geotrichum gap box */
+  .geo-gap { background: #fffbeb; border: 1px solid #fcd34d; border-radius: 10px;
+             padding: 1.25rem 1.5rem; margin-bottom: 1.5rem; }
+  .geo-gap h3 { color: #92400e; }
+
+  footer { text-align: center; font-size: 0.78rem; color: #a0aec0; margin-top: 3rem; }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header>
+    <h1>Hydrocarbon-Degrading Marine <em>Aspergillus</em> &amp; <em>Geotrichum</em></h1>
+    <p class="subtitle">A PubMed-based literature survey — 6 papers, 2021–2025</p>
+    <p class="meta">Generated: 2026-06-15 &nbsp;|&nbsp; Topic: diesel/hydrocarbon degradation by marine fungi</p>
+  </header>
+
+  <div class="alert">
+    <strong>Note on Geotrichum:</strong> A systematic PubMed search (2021–2026) found <strong>no recent peer-reviewed papers</strong>
+    specifically isolating or characterising <em>Geotrichum</em> spp. as marine hydrocarbon degraders. The only documented case
+    is the historical patent isolate <em>Geotrichum marinum</em> Thirumalachar (ATCC 20614), which emulsified and consumed crude
+    petroleum but has not been revisited in recent literature. This gap is discussed in the
+    <a href="#geotrichum">Geotrichum section</a> below. Papers 1–6 focus on <em>Aspergillus</em>.
+  </div>
+
+  <!-- ===================== PAPER 1 ===================== -->
+  <h2>Paper Summaries</h2>
+
+  <details class="paper-card" open>
+    <summary>
+      <div class="summary-text">
+        <div class="paper-title">
+          Crude-oil degradation capabilities by microscopic fungi of deep-sea hydrothermal vents
+          <span class="badge badge-marine">Marine</span>
+          <span class="badge badge-aspergillus">Aspergillus</span>
+        </div>
+        <div class="paper-meta">Salcedo et al. · 2025 · <em>Environmental Science and Pollution Research International</em></div>
+      </div>
+    </summary>
+    <div class="paper-body">
+      <div class="field">
+        <div class="field-label">Problem</div>
+        <div class="field-content">Deep-sea hydrothermal vent fungi remain largely unexplored as crude oil degraders despite being
+        exposed to natural seepage. Whether isolates from these extreme environments can tolerate and biotransform light
+        and heavy crude oils was unknown.</div>
+      </div>
+      <div class="field">
+        <div class="field-label">Methods</div>
+        <div class="field-content">Six fungal isolates recovered from superficial sediments of Pescadero Basin, Pescadero Transform
+        Fault, and Alarcón Rise (Gulf of California, Mexico) hydrothermal vents were tested in tolerance and biodegradation
+        bioassays with light crude oil (LCO) and heavy crude oil (HCO, 12° API). Species: <em>Aspergillus terreus</em>,
+        <em>A. sydowii</em>, <em>Aspergillus</em> sp., <em>Penicillium miczynskii</em> (2 isolates), <em>P. dodgei</em>.
+        Analytical methods: stable isotope analysis (δ¹³C, δ¹⁵N) and GC-FID.</div>
+      </div>
+      <div class="field">
+        <div class="field-label">Key Findings</div>
+        <div class="field-content">
+          <div class="highlight"><em>A. terreus</em> achieved 23% enhanced growth with LCO; C30+ hydrocarbons decreased 42%
+          in HCO. Selectively degraded C19–C22 alkanes (38% depletion). <em>A. sydowii</em> showed 21% increased growth
+          in HCO. <em>P. miczynskii</em> (isolate F) was the top performer overall (157% growth above controls in LCO;
+          53% C30+ depletion). δ¹³C enrichment (10.68–11.21‰) confirmed active carbon assimilation from crude oil.</div>
+        </div>
+      </div>
+      <div class="field">
+        <div class="field-label">Takeaways</div>
+        <div class="field-content">Deep-sea <em>Aspergillus terreus</em> and <em>A. sydowii</em> can metabolise medium-
+        and long-chain aliphatic hydrocarbons from crude oil, making them promising bioremediation candidates for
+        marine oil spill contexts. Stable isotope analysis is a valuable confirmatory tool beyond gravimetric methods.</div>
+      </div>
+      <div class="field">
+        <div class="field-label">Limitations</div>
+        <div class="field-content">LCO samples lacked sufficient post-incubation volume for compositional GC analysis;
+        open system design allowed light hydrocarbon volatilisation; enzymatic mechanisms not characterised;
+        experiments at atmospheric pressure do not reflect in-situ deep-sea conditions.</div>
+      </div>
+      <div class="field">
+        <div class="field-label">DOI</div>
+        <div class="field-content"><a href="https://doi.org/10.1007/s11356-025-36879-2" target="_blank">10.1007/s11356-025-36879-2</a></div>
+      </div>
+    </div>
+  </details>
+
+  <!-- ===================== PAPER 2 ===================== -->
+  <details class="paper-card">
+    <summary>
+      <div class="summary-text">
+        <div class="paper-title">
+          Degradation of Extra-Heavy Crude Oil by Fungi Isolated from Hydrothermal Vents in the Gulf of California
+          <span class="badge badge-marine">Marine</span>
+          <span class="badge badge-aspergillus">Aspergillus</span>
+        </div>
+        <div class="paper-meta">Romero-Hernández et al. · 2025 · <em>Mycobiology</em></div>
+      </div>
+    </summary>
+    <div class="paper-body">
+      <div class="field">
+        <div class="field-label">Problem</div>
+        <div class="field-content">Extra-heavy crude oil (EHCO, 7–10° API) is among the most recalcitrant petroleum fractions and
+        no study had evaluated fungi from deep-sea hydrothermal vents specifically for EHCO bioconversion.</div>
+      </div>
+      <div class="field">
+        <div class="field-label">Methods</div>
+        <div class="field-content">Eight fungal isolates from Pescadero Basin sediments (2,176–3,690 m depth) were grown on EHCO
+        (0.5% w/v) as the sole carbon source for 15 days. Species included <em>Aspergillus sydowii</em>, <em>A. terreus</em>,
+        <em>Aspergillus</em> sp., and <em>Penicillium</em> spp. Gravimetric analysis, GC for saturate fractions,
+        Bradford assay for biomass, and SEM for mycelial-oil interactions.</div>
+      </div>
+      <div class="field">
+        <div class="field-label">Key Findings</div>
+        <div class="field-content">
+          <div class="highlight">
+            <strong>Degradation table:</strong><br>
+            <em>A. sydowii</em>: 40.6% total EHCO / 38.3% saturate fraction degradation — best performer<br>
+            <em>P. miczynskii</em>: 17.1% / 20.0%<br>
+            <em>A. terreus</em>: 16.0% / 4.7%<br>
+            <em>A.</em> sp. 4: 2.7% / −21.8% (net increase, possible biosurfactant effect)
+          </div>
+          <em>A. sydowii</em> "significantly outperformed" previously documented hydrocarbonoclastic fungi on EHCO.
+          SEM revealed mycelial penetration into oil droplets, suggesting mechanical as well as enzymatic mechanisms.
+        </div>
+      </div>
+      <div class="field">
+        <div class="field-label">Takeaways</div>
+        <div class="field-content">Marine deep-sea <em>A. sydowii</em> is currently the best-documented fungal candidate
+        for extra-heavy crude oil degradation, with potential relevance to bioremediation of heavy oil spills and enhanced
+        oil recovery (EOR) strategies.</div>
+      </div>
+      <div class="field">
+        <div class="field-label">Limitations</div>
+        <div class="field-content">Axenic cultures only; consortia effects unexplored. Single EHCO source, fixed concentration.
+        Atmospheric pressure / 23°C — not deep-sea conditions. Enzymatic mechanisms not characterised. Short incubation (15 days).</div>
+      </div>
+      <div class="field">
+        <div class="field-label">DOI</div>
+        <div class="field-content"><a href="https://doi.org/10.1080/12298093.2025.2545629" target="_blank">10.1080/12298093.2025.2545629</a></div>
+      </div>
+    </div>
+  </details>
+
+  <!-- ===================== PAPER 3 ===================== -->
+  <details class="paper-card">
+    <summary>
+      <div class="summary-text">
+        <div class="paper-title">
+          Genome sequence analysis of deep sea <em>Aspergillus sydowii</em> BOBA1 and effect of high pressure on biodegradation of spent engine oil
+          <span class="badge badge-marine">Marine</span>
+          <span class="badge badge-aspergillus">Aspergillus</span>
+        </div>
+        <div class="paper-meta">Kumar et al. · 2021 · <em>Scientific Reports</em></div>
+      </div>
+    </summary>
+    <div class="paper-body">
+      <div class="field">
+        <div class="field-label">Problem</div>
+        <div class="field-content">Deep-sea fungi experience high hydrostatic pressure in situ. Whether this pressure enhances
+        rather than inhibits hydrocarbon degradation, and which genomic elements underpin the capacity of a deep-sea
+        <em>Aspergillus</em> to metabolise petroleum, were open questions.</div>
+      </div>
+      <div class="field">
+        <div class="field-label">Methods</div>
+        <div class="field-content">Single isolate: <em>A. sydowii</em> BOBA1 from marine sediment at 3,000 m depth, Bay of Bengal,
+        India (ITS-confirmed, 98% similarity). Hydrocarbons tested: spent engine oil (primary), plus crude oil, diesel, kerosene,
+        petrol, n-hexadecane, toluene, xylene in growth screening. High-pressure bioreactors at 0.1 MPa and 10 MPa over 21 days.
+        Whole genome sequencing (Illumina HiSeq 4000, 38.8 Mb, 18,932 predicted genes). FTIR, ¹H/¹³C NMR, GC-MS, and SEM.</div>
+      </div>
+      <div class="field">
+        <div class="field-label">Key Findings</div>
+        <div class="field-content">
+          <div class="highlight">
+            Oil removal: <strong>71.2%</strong> at 0.1 MPa vs. <strong>82.5%</strong> at 10 MPa within 21 days —
+            elevated pressure <em>enhanced</em> degradation efficiency by ~16%.
+          </div>
+          Genome analysis revealed 1,482 unique genes including cytochrome P450 monooxygenases, dioxygenases, peroxidases,
+          glutathione S-transferases, and siderophore biosynthesis clusters, all relevant to aromatic and aliphatic hydrocarbon
+          catabolism. Catechol, gentisate, and phthalic acid pathways confirmed. BOD reduction indicated genuine mineralisation,
+          not just emulsification.
+        </div>
+      </div>
+      <div class="field">
+        <div class="field-label">Takeaways</div>
+        <div class="field-content">The first genomic-level characterisation of a piezotolerant deep-sea
+        <em>Aspergillus</em> degrading petroleum. High pressure upregulates or preserves degradation capacity, with
+        direct implications for in-situ bioremediation at depth. Also demonstrated growth on diesel as sole carbon source.</div>
+      </div>
+      <div class="field">
+        <div class="field-label">Limitations</div>
+        <div class="field-content">Single isolate; community interactions unexplored. High-pressure limit of 10 MPa
+        (≈1,000 m equivalent) does not represent the deepest marine environments. Long-term stability of immobilised
+        fungal preparations not assessed.</div>
+      </div>
+      <div class="field">
+        <div class="field-label">DOI</div>
+        <div class="field-content"><a href="https://doi.org/10.1038/s41598-021-88525-9" target="_blank">10.1038/s41598-021-88525-9</a></div>
+      </div>
+    </div>
+  </details>
+
+  <!-- ===================== PAPER 4 ===================== -->
+  <details class="paper-card">
+    <summary>
+      <div class="summary-text">
+        <div class="paper-title">
+          Transcriptome Profiling Reveals Differential Gene Expression of Laccase Genes in <em>Aspergillus terreus</em> KC462061 during Biodegradation of Crude Oil
+          <span class="badge badge-aspergillus">Aspergillus</span>
+        </div>
+        <div class="paper-meta">Alharbi et al. · 2022 · <em>Biology</em> (Basel)</div>
+      </div>
+    </summary>
+    <div class="paper-body">
+      <div class="field">
+        <div class="field-label">Problem</div>
+        <div class="field-content"><em>Aspergillus terreus</em> produces multiple laccase isoforms, but which specific genes drive
+        crude oil oxidation and how their expression changes during biodegradation had not been resolved at the transcriptomic level.</div>
+      </div>
+      <div class="field">
+        <div class="field-label">Methods</div>
+        <div class="field-content">Isolate KC462061 from hydrocarbon-contaminated mangrove sediment (Red Sea coast, Saudi Arabia).
+        Substrate: 1% crude oil (aliphatic + aromatic fractions). qPCR profiling of eight laccase genes (<em>lcc1</em>–<em>lcc12</em>);
+        copper/ABTS (Cu-ABTS) induction experiment. GC-MS for quantification of hydrocarbon breakdown. SDS-PAGE for secretome profiling.
+        Duration: 15 days.</div>
+      </div>
+      <div class="field">
+        <div class="field-label">Key Findings</div>
+        <div class="field-content">
+          <div class="highlight">
+            Aliphatic degradation: <strong>82.1 ± 0.2%</strong> | Aromatic degradation: <strong>77.4 ± 0.6%</strong><br>
+            Cu-ABTS addition increased laccase activity <strong>22-fold</strong>.
+            <em>Lcc11</em> and <em>Lcc12</em> were the predominantly upregulated genes.
+          </div>
+          Maximum laccase activity was achieved at day 7–9; aromatic ring opening confirmed by GC-MS metabolite analysis.
+          <em>A. terreus</em> KC462061 was isolated from a coastal mangrove (brackish/marine-influenced) environment.
+        </div>
+      </div>
+      <div class="field">
+        <div class="field-label">Takeaways</div>
+        <div class="field-content">Laccase genes <em>lcc11</em> and <em>lcc12</em> are key molecular targets for
+        engineering enhanced crude oil degradation. Copper supplementation is a practical strategy to boost
+        <em>Aspergillus</em> laccase output in bioremediation applications.</div>
+      </div>
+      <div class="field">
+        <div class="field-label">Limitations</div>
+        <div class="field-content">Single isolate; laboratory-controlled conditions may not reflect in-situ complexity.
+        Coastal mangrove origin — not open-ocean marine. No field or mesocosm validation.</div>
+      </div>
+      <div class="field">
+        <div class="field-label">DOI</div>
+        <div class="field-content"><a href="https://doi.org/10.3390/biology11040564" target="_blank">10.3390/biology11040564</a></div>
+      </div>
+    </div>
+  </details>
+
+  <!-- ===================== PAPER 5 ===================== -->
+  <details class="paper-card">
+    <summary>
+      <div class="summary-text">
+        <div class="paper-title">
+          Fungal Extracellular Enzymes from <em>Aspergillus</em> spp. as Promising Candidates for Extra-Heavy Oil Degradation and Enhanced Oil Recovery
+          <span class="badge badge-aspergillus">Aspergillus</span>
+        </div>
+        <div class="paper-meta">Zhang et al. · 2024 · <em>Microorganisms</em></div>
+      </div>
+    </summary>
+    <div class="paper-body">
+      <div class="field">
+        <div class="field-label">Problem</div>
+        <div class="field-content">Extra-heavy crude oil is highly viscous and resistant to bacterial bioconversion. Whether
+        cell-free extracellular enzyme extracts from <em>Aspergillus</em> could reduce EHCO viscosity and break down resin
+        and asphaltene fractions for enhanced oil recovery was untested.</div>
+      </div>
+      <div class="field">
+        <div class="field-label">Methods</div>
+        <div class="field-content">Two isolates from bitumen enrichment cultures: <em>A. terreus</em> HJ2 and
+        <em>A. nidulans</em> HJ4. EHCO from Tahe Oilfield, Xinjiang, China (200,457 mPa·s at 50°C). Solid-state fermentation;
+        enzyme complex E242. SARA fraction analysis, GC-MS for n-alkane redistribution, ICP-OES for heavy metal removal,
+        biogas quantification.</div>
+      </div>
+      <div class="field">
+        <div class="field-label">Key Findings</div>
+        <div class="field-content">
+          <div class="highlight">
+            Resin reduction: <strong>61.8%</strong> | Asphaltene reduction: <strong>48.0%</strong> | Viscosity decrease: <strong>12.7%</strong><br>
+            Ni removal: 44.1% | Fe removal: 54.0% | V removal: 31.6%<br>
+            Biogas (mainly CO₂ + H₂): 335.3 mL from 2 g EHCO over 7 days.
+          </div>
+          Key enzymes: dehydrogenase and catechol 2,3-dioxygenase. Cell-free approach avoids inoculation hurdles in
+          closed reservoirs. Terrestrial isolates (non-marine) but results highly relevant to offshore EOR scenarios.
+        </div>
+      </div>
+      <div class="field">
+        <div class="field-label">Takeaways</div>
+        <div class="field-content">Extracellular enzyme preparations from <em>A. terreus</em> and <em>A. nidulans</em>
+        can substantially degrade the heaviest petroleum fractions; the cell-free approach offers operational advantages
+        over whole-cell bioaugmentation for in-reservoir applications.</div>
+      </div>
+      <div class="field">
+        <div class="field-label">Limitations</div>
+        <div class="field-content">Non-marine isolate origin. Enzyme stability under variable reservoir conditions (temperature,
+        salinity, pH) not characterised. No core-flooding validation. Short incubation (7 days).</div>
+      </div>
+      <div class="field">
+        <div class="field-label">DOI</div>
+        <div class="field-content"><a href="https://doi.org/10.3390/microorganisms12112248" target="_blank">10.3390/microorganisms12112248</a></div>
+      </div>
+    </div>
+  </details>
+
+  <!-- ===================== PAPER 6 ===================== -->
+  <details class="paper-card">
+    <summary>
+      <div class="summary-text">
+        <div class="paper-title">
+          Exploring Novel Fungal–Bacterial Consortia for Enhanced Petroleum Hydrocarbon Degradation
+          <span class="badge badge-review">Consortia context</span>
+        </div>
+        <div class="paper-meta">Monteiro et al. · 2024 · <em>Toxics</em></div>
+      </div>
+    </summary>
+    <div class="paper-body">
+      <div class="field">
+        <div class="field-label">Problem</div>
+        <div class="field-content">Degradation of diesel oil (B20 blend) and associated PAHs by single-strain cultures is
+        limited. Whether consortia of novel fungi (no prior bioremediation reports) with bacteria could outperform
+        established isolates was tested in a controlled soil microcosm design.</div>
+      </div>
+      <div class="field">
+        <div class="field-label">Methods</div>
+        <div class="field-content">Isolates from diesel/biodiesel-contaminated soils (southern Brazil): 7 fungal
+        (<em>Penicillium</em>, <em>Trichoderma</em>), 12 bacterial (<em>Burkholderia</em>, <em>Bacillus</em>,
+        <em>Serratia</em>, <em>Stenotrophomonas</em>) species. No <em>Aspergillus</em> or <em>Geotrichum</em>
+        isolated. Substrate: commercial diesel B20 (20% biodiesel / 80% diesel). 11 PAHs + TPH (C5–C40).
+        15-day incubation, GC-MS quantification.</div>
+      </div>
+      <div class="field">
+        <div class="field-label">Key Findings</div>
+        <div class="field-content">
+          <div class="highlight">
+            Best mixed consortium (FBB1: <em>T. koningiopsis</em> + <em>S. marcescens</em> + <em>B. cepacia</em>):
+            <strong>≥91%</strong> degradation for all 11 PAHs; 93.52% TPH removal.
+            First report of <em>Trichoderma koningiopsis</em> as a petroleum hydrocarbon degrader.
+          </div>
+          Fungal-only (FF1) and bacterial-only (BB1) consortia achieved ~88–94% PAH removal, comparable to the
+          mixed consortium. Consortia consistently outperformed individual isolates.
+        </div>
+      </div>
+      <div class="field">
+        <div class="field-label">Relevance to Aspergillus / Geotrichum</div>
+        <div class="field-content">Neither genus was present in isolates from this contaminated site, illustrating that
+        Aspergillus is not always a dominant hydrocarbon degrader in every environmental context. Provides a
+        high-efficiency benchmark (≥91% PAH removal) for consortium performance comparison.</div>
+      </div>
+      <div class="field">
+        <div class="field-label">Limitations</div>
+        <div class="field-content">Laboratory-scale only; no field or mesocosm trial. Short incubation (15 days).
+        Cultivation parameter optimisation not explored.</div>
+      </div>
+      <div class="field">
+        <div class="field-label">DOI</div>
+        <div class="field-content"><a href="https://doi.org/10.3390/toxics12120913" target="_blank">10.3390/toxics12120913</a></div>
+      </div>
+    </div>
+  </details>
+
+  <!-- ===================== GEOTRICHUM SECTION ===================== -->
+  <h2 id="geotrichum"><em>Geotrichum</em> — Literature Gap Analysis</h2>
+
+  <div class="geo-gap">
+    <h3>Why Recent Literature is Absent</h3>
+    <p style="margin-top:0.6rem; font-size:0.9rem;">A systematic PubMed and open-web search covering 2021–2026
+    returned <strong>zero peer-reviewed original research papers</strong> specifically characterising a marine
+    <em>Geotrichum</em> species as a diesel or hydrocarbon degrader. The key historical evidence consists of:</p>
+    <ul style="margin:0.75rem 0 0 1.3rem; font-size:0.9rem;">
+      <li><strong><em>Geotrichum marinum</em> Thirumalachar sp. nov. (ATCC 20614)</strong> — isolated from marine soil and
+      patented in the 1980s (US Patent 4,415,661) for degradation of crude petroleum via emulsification, solubilisation, and
+      consumption. This remains the most specific documented case for a marine <em>Geotrichum</em>.</li>
+      <li><strong><em>Geotrichum candidum</em></strong> — isolated near an oil well in Hodonin, Czech Republic, and included
+      in a patented microbial consortium (with <em>Pseudomonas putida</em>) for mineral oil degradation in the 1990s.
+      No marine origin; no recent revival in the literature.</li>
+      <li>The 2022 review (Rahmati et al., <em>Microorganisms</em>, DOI: 10.3390/microorganisms10071289) on marine
+      hydrocarbon spill bioremediation covers over 200 references and does not mention <em>Geotrichum</em> at all.</li>
+    </ul>
+    <p style="margin-top:0.75rem; font-size:0.9rem;"><strong>Interpretation:</strong> <em>Geotrichum</em> spp. appear
+    in early hydrocarbon bioremediation work (pre-2000) but have been largely displaced in the literature by
+    <em>Aspergillus</em>, <em>Penicillium</em>, <em>Trichoderma</em>, and <em>Candida</em> as model fungi.
+    The genus is not known to be a dominant marine hydrocarbon coloniser. If research coverage of
+    <em>Geotrichum</em> is needed, the most productive avenue would be to re-isolate from marine-influenced
+    petroleum-contaminated sites and characterise using modern genomic approaches — the existing ATCC 20614
+    strain could itself be a starting point for a revival study.</p>
+  </div>
+
+  <!-- ===================== CROSS-PAPER OBSERVATIONS ===================== -->
+  <h2>Cross-Paper Observations</h2>
+
+  <div class="obs-box">
+    <h3>1. Methodological Patterns</h3>
+    <ul>
+      <li>GC/GC-MS (aliphatic fraction) and gravimetric analysis are universal quantification methods; isotope
+      analysis (δ¹³C) is an emerging confirmatory tool (Salcedo et al. 2025).</li>
+      <li>Laboratory incubation periods cluster at <strong>7–21 days</strong>, which may under-represent the degradation
+      potential over ecologically relevant timescales.</li>
+      <li>Only one study (Kumar et al. 2021) combined whole-genome sequencing with degradation experiments — the dominant
+      approach remains phenotypic/biochemical. Transcriptomics was used in Alharbi et al. 2022 but without accompanying
+      genomics.</li>
+      <li>High-pressure bioreactors were used only in Kumar et al. 2021, leaving a major gap given that most marine
+      Aspergillus isolates come from deep-sea environments (2,000–3,700 m).</li>
+    </ul>
+  </div>
+
+  <div class="obs-box">
+    <h3>2. Emerging Consensus</h3>
+    <ul>
+      <li><strong><em>Aspergillus sydowii</em> is the leading marine <em>Aspergillus</em> species</strong> for hydrocarbon
+      degradation, outperforming other isolates on extra-heavy crude oil (Romero-Hernández et al. 2025) and achieving the
+      highest removal rates under elevated pressure (Kumar et al. 2021).</li>
+      <li><strong><em>Aspergillus terreus</em></strong> is consistently the second-ranked species, effective against
+      medium-to-long-chain aliphatics and aromatics, with a well-characterised laccase system (Alharbi et al. 2022).</li>
+      <li>Hydrothermal vent isolates (Gulf of California) are emerging as a fertile source of hydrocarbonoclastic
+      Aspergilli, likely selected by natural hydrocarbon seepage.</li>
+      <li>Laccase, CYP450 monooxygenases, dioxygenases, and catechol pathway enzymes are the key enzymatic machinery
+      across all studied Aspergillus strains.</li>
+    </ul>
+  </div>
+
+  <div class="obs-box">
+    <h3>3. Open Debates</h3>
+    <ul>
+      <li><strong>Volatilisation vs. true degradation:</strong> Open-system designs cannot rule out hydrocarbon
+      evaporation contributing to measured mass loss; closed-system GC or isotope approaches are needed.</li>
+      <li><strong>Pressure effects:</strong> Kumar et al. 2021 found enhanced degradation at 10 MPa; it is unclear
+      whether this is a metabolic upregulation or a physical solubilisation effect increasing bioavailability.</li>
+      <li><strong>Consortia vs. axenic:</strong> Monteiro et al. 2024 showed consortia outperform individual strains
+      (≥91% PAH removal), yet all marine Aspergillus studies used single-strain cultures — a knowledge gap given that
+      in situ communities include both bacteria and fungi.</li>
+    </ul>
+  </div>
+
+  <div class="obs-box">
+    <h3>4. Open Questions for Future Research</h3>
+    <ul>
+      <li>Can <em>A. sydowii</em> marine isolates be formulated into effective biosurfactant-producing consortia
+      for open-sea oil spill response?</li>
+      <li>What is the in-situ degradation capacity of these fungi at actual deep-sea pressures and temperatures
+      (2°C, &gt;20 MPa)?</li>
+      <li>Are <em>Geotrichum marinum</em> (ATCC 20614) or newly isolated coastal <em>Geotrichum</em> spp. capable
+      of degrading diesel-range hydrocarbons competitively with modern <em>Aspergillus</em> isolates?</li>
+      <li>Which specific laccase and CYP450 genes are shared across marine <em>Aspergillus</em> strains from
+      geographically distinct hydrothermal vents — are there conserved "hydrocarbon degradation cassettes"?</li>
+    </ul>
+  </div>
+
+  <!-- ===================== REFERENCE TABLE ===================== -->
+  <h2>Reference Table</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Title (abbreviated)</th>
+          <th>Year</th>
+          <th>Venue</th>
+          <th>Key Method</th>
+          <th>1-line Conclusion</th>
+          <th>DOI</th>
+          <th>APA Citation</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Crude-oil degradation by deep-sea hydrothermal vent fungi</td>
+          <td>2025</td>
+          <td><em>Environ Sci Pollut Res Int</em></td>
+          <td>GC-FID, stable isotope analysis</td>
+          <td><em>A. terreus</em> and <em>A. sydowii</em> selectively degrade long-chain aliphatics from heavy crude oil</td>
+          <td><a href="https://doi.org/10.1007/s11356-025-36879-2" target="_blank">10.1007/s11356-025-36879-2</a></td>
+          <td>Salcedo, D. L., Velez, P., López-Ramírez, S., Quiñones-Martínez, R., Barragán-Aroche, F., Soto, L. A., &amp; Figueroa, M. (2025). Crude-oil degradation capabilities by microscopic fungi of deep-sea hydrothermal vents. <em>Environmental Science and Pollution Research International</em>. https://doi.org/10.1007/s11356-025-36879-2</td>
+        </tr>
+        <tr>
+          <td>Extra-heavy crude oil degradation by Gulf of California hydrothermal vent fungi</td>
+          <td>2025</td>
+          <td><em>Mycobiology</em></td>
+          <td>Gravimetric + GC (saturate fraction)</td>
+          <td>Marine <em>A. sydowii</em> achieves 40.6% degradation of extra-heavy crude oil — best documented fungal performance on EHCO</td>
+          <td><a href="https://doi.org/10.1080/12298093.2025.2545629" target="_blank">10.1080/12298093.2025.2545629</a></td>
+          <td>Romero-Hernández, L., Betanzo-Gutiérrez, I., Vazquez-Duhalt, R., Figueroa, M., Riquelme, M., &amp; Velez, P. (2025). Degradation of extra-heavy crude oil by fungi isolated from hydrothermal vents fields in the Gulf of California. <em>Mycobiology</em>. https://doi.org/10.1080/12298093.2025.2545629</td>
+        </tr>
+        <tr>
+          <td>Genome of deep-sea <em>A. sydowii</em> BOBA1 and high-pressure oil biodegradation</td>
+          <td>2021</td>
+          <td><em>Scientific Reports</em></td>
+          <td>Whole-genome sequencing, high-pressure bioreactor, GC-MS</td>
+          <td>Deep-sea <em>A. sydowii</em> removes 82.5% of spent engine oil at 10 MPa — elevated pressure enhances degradation</td>
+          <td><a href="https://doi.org/10.1038/s41598-021-88525-9" target="_blank">10.1038/s41598-021-88525-9</a></td>
+          <td>Kumar, A. G., Manisha, D., Sujitha, K., Magesh Peter, D., Kirubagaran, R., &amp; Dharani, G. (2021). Genome sequence analysis of deep sea <em>Aspergillus sydowii</em> BOBA1 and effect of high pressure on biodegradation of spent engine oil. <em>Scientific Reports</em>, <em>11</em>, 9164. https://doi.org/10.1038/s41598-021-88525-9</td>
+        </tr>
+        <tr>
+          <td>Laccase gene transcriptomics in <em>A. terreus</em> during crude oil degradation</td>
+          <td>2022</td>
+          <td><em>Biology</em> (Basel)</td>
+          <td>qPCR (8 laccase genes), GC-MS, SDS-PAGE</td>
+          <td><em>Lcc11/Lcc12</em> are key laccase genes; Cu-ABTS induction boosts activity 22× and drives 82.1% aliphatic removal</td>
+          <td><a href="https://doi.org/10.3390/biology11040564" target="_blank">10.3390/biology11040564</a></td>
+          <td>Alharbi, N. K., Alzaban, M. I., Albarakaty, F. M., Abd El-Aziz, A. R. M., AlRokban, A. H., &amp; Mahmoud, M. A. (2022). Transcriptome profiling reveals differential gene expression of laccase genes in <em>Aspergillus terreus</em> KC462061 during biodegradation of crude oil. <em>Biology</em>, <em>11</em>(4), 564. https://doi.org/10.3390/biology11040564</td>
+        </tr>
+        <tr>
+          <td><em>Aspergillus</em> extracellular enzymes for extra-heavy oil degradation and EOR</td>
+          <td>2024</td>
+          <td><em>Microorganisms</em></td>
+          <td>SARA analysis, GC-MS, ICP-OES, biogas quantification</td>
+          <td>Cell-free enzyme complex E242 from <em>A. terreus</em>/<em>A. nidulans</em> reduces EHCO resins by 61.8% and asphaltenes by 48%</td>
+          <td><a href="https://doi.org/10.3390/microorganisms12112248" target="_blank">10.3390/microorganisms12112248</a></td>
+          <td>Zhang, J., Feng, W., &amp; Ren, L. (2024). Fungal extracellular enzymes from <em>Aspergillus</em> spp. as promising candidates for extra-heavy oil degradation and enhanced oil recovery. <em>Microorganisms</em>, <em>12</em>(11), 2248. https://doi.org/10.3390/microorganisms12112248</td>
+        </tr>
+        <tr>
+          <td>Fungal–bacterial consortia for enhanced petroleum hydrocarbon degradation</td>
+          <td>2024</td>
+          <td><em>Toxics</em></td>
+          <td>GC-MS, TPH/PAH quantification</td>
+          <td>Mixed consortia (Trichoderma + Burkholderia + Serratia) degrade ≥91% of all PAHs in diesel oil — highest rate without Aspergillus</td>
+          <td><a href="https://doi.org/10.3390/toxics12120913" target="_blank">10.3390/toxics12120913</a></td>
+          <td>Monteiro, J. P. S., da Silva, A. F., Duarte, R. T. D., &amp; Giachini, A. J. (2024). Exploring novel fungal–bacterial consortia for enhanced petroleum hydrocarbon degradation. <em>Toxics</em>, <em>12</em>(12), 913. https://doi.org/10.3390/toxics12120913</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <footer>
+    Generated by Claude Code (claude-sonnet-4-6) · Workspace: Diesel Degradation Review · 2026-06-15
+  </footer>
+
+</div>
+</body>
+</html>

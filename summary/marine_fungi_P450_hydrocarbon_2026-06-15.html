@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>P450 Monooxygenase in Marine Fungi — Hydrocarbon Degradation Literature Survey</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+         background: #f4f6fa; color: #1a202c; line-height: 1.67; font-size: 15px; }
+  .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.25rem 4rem; }
+
+  /* Header */
+  header { background: linear-gradient(135deg, #2b1655 0%, #1a4e6e 60%, #1e6b5a 100%);
+           color: #fff; border-radius: 12px; padding: 2rem 2.25rem; margin-bottom: 2rem; }
+  header h1 { font-size: 1.55rem; font-weight: 700; line-height: 1.3; }
+  header .subtitle { margin-top: 0.5rem; font-size: 0.95rem; opacity: 0.85; }
+  header .meta { margin-top: 0.9rem; font-size: 0.82rem; opacity: 0.7; }
+
+  /* Method matrix */
+  .matrix-wrap { overflow-x: auto; margin-bottom: 2rem; border-radius: 8px;
+                 border: 1px solid #d1d9e6; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+  .matrix-wrap table { width: 100%; border-collapse: collapse; font-size: 0.8rem; }
+  .matrix-wrap th { background: #2b1655; color: #fff; padding: 0.55rem 0.7rem;
+                    text-align: center; font-weight: 600; }
+  .matrix-wrap th:first-child { text-align: left; }
+  .matrix-wrap td { padding: 0.5rem 0.7rem; border-bottom: 1px solid #e2e8f0;
+                    text-align: center; vertical-align: middle; }
+  .matrix-wrap td:first-child { text-align: left; font-weight: 500; }
+  .matrix-wrap tr:last-child td { border-bottom: none; }
+  .matrix-wrap tr:nth-child(even) td { background: #f7f9ff; }
+  .dot-yes  { color: #16a34a; font-size: 1.1rem; font-weight: 700; }
+  .dot-part { color: #d97706; font-size: 1.1rem; font-weight: 700; }
+  .dot-no   { color: #cbd5e1; font-size: 1rem; }
+
+  /* Alert boxes */
+  .alert { border-radius: 8px; padding: 0.9rem 1.1rem; margin-bottom: 1.5rem; font-size: 0.9rem; }
+  .alert-gap { background: #fff8e1; border-left: 4px solid #f59e0b; }
+  .alert-gap strong { color: #92400e; }
+  .alert-info { background: #e8f4fd; border-left: 4px solid #3b82f6; }
+  .alert-info strong { color: #1e40af; }
+
+  /* Section headers */
+  h2 { font-size: 1.15rem; font-weight: 700; color: #2b1655; margin: 2rem 0 1rem;
+       padding-bottom: 0.4rem; border-bottom: 2px solid #d0d8f7; }
+  h3 { font-size: 1rem; font-weight: 600; color: #2d3748; margin: 1.2rem 0 0.4rem; }
+
+  /* Paper cards */
+  .paper-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 10px;
+                margin-bottom: 1.25rem; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+  .paper-card summary { padding: 1rem 1.25rem; cursor: pointer; list-style: none;
+                         display: flex; align-items: flex-start; gap: 0.75rem; }
+  .paper-card summary::-webkit-details-marker { display: none; }
+  .paper-card summary::before { content: "▶"; font-size: 0.7rem; color: #2b1655;
+                                  margin-top: 0.25rem; flex-shrink: 0; transition: transform 0.2s; }
+  .paper-card[open] summary::before { transform: rotate(90deg); }
+  .paper-card summary:hover { background: #f7f5ff; }
+  .summary-text { flex: 1; }
+  .paper-title { font-weight: 600; color: #2b1655; font-size: 0.95rem; line-height: 1.4; }
+  .paper-meta { font-size: 0.8rem; color: #718096; margin-top: 0.25rem; }
+
+  .badge { display: inline-block; padding: 0.15rem 0.55rem; border-radius: 999px;
+           font-size: 0.7rem; font-weight: 700; margin-left: 0.35rem; vertical-align: middle; }
+  .b-marine   { background: #dbeafe; color: #1e40af; }
+  .b-genome   { background: #ede9fe; color: #5b21b6; }
+  .b-enzyme   { background: #dcfce7; color: #166534; }
+  .b-qpcr     { background: #fef3c7; color: #92400e; }
+  .b-metab    { background: #fce7f3; color: #9d174d; }
+  .b-insilico { background: #e0f2fe; color: #0e7490; }
+  .b-review   { background: #f3f4f6; color: #374151; }
+  .b-2019     { background: #fee2e2; color: #991b1b; font-size: 0.65rem; }
+
+  .paper-body { padding: 0 1.25rem 1.25rem; }
+  .field { margin-bottom: 0.7rem; }
+  .field-label { font-size: 0.74rem; font-weight: 700; text-transform: uppercase;
+                 letter-spacing: 0.05em; color: #4a5568; margin-bottom: 0.2rem; }
+  .field-content { font-size: 0.88rem; color: #2d3748; }
+  .hl { background: #fef9e7; border-left: 3px solid #f59e0b; padding: 0.5rem 0.75rem;
+        border-radius: 0 4px 4px 0; margin: 0.4rem 0; font-size: 0.87rem; }
+  .hl-purple { background: #f5f3ff; border-left: 3px solid #7c3aed; }
+  .gene { font-family: "Courier New", monospace; background: #f1f5f9; padding: 0.05rem 0.3rem;
+          border-radius: 3px; font-size: 0.82rem; color: #1e293b; }
+
+  /* Reference table */
+  .table-wrap { overflow-x: auto; margin: 1rem 0 2rem; border-radius: 8px;
+                border: 1px solid #e2e8f0; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.79rem; }
+  th { background: #2b1655; color: #fff; padding: 0.6rem 0.75rem; text-align: left; font-weight: 600; }
+  td { padding: 0.5rem 0.75rem; border-bottom: 1px solid #e2e8f0; vertical-align: top; }
+  tr:last-child td { border-bottom: none; }
+  tr:nth-child(even) td { background: #f7f5ff; }
+  td a { color: #2b1655; text-decoration: none; }
+  td a:hover { text-decoration: underline; }
+
+  /* Obs box */
+  .obs-box { background: #fff; border: 1px solid #e2e8f0; border-radius: 10px;
+             padding: 1.2rem 1.5rem; margin-bottom: 1.1rem;
+             box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+  .obs-box ul { padding-left: 1.3rem; }
+  .obs-box li { margin-bottom: 0.5rem; font-size: 0.9rem; }
+  .obs-box p  { font-size: 0.9rem; }
+
+  footer { text-align: center; font-size: 0.78rem; color: #a0aec0; margin-top: 3rem; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <h1>P450 Monooxygenase in Marine Fungi<br>Hydrocarbon Degradation Mechanisms</h1>
+  <p class="subtitle">PubMed-based survey — 7 papers, 2019–2025 (focus 2021–2025)</p>
+  <p class="meta">
+    Generated: 2026-06-15 &nbsp;|&nbsp; Approaches covered: genomics · in silico · metabolomics · qPCR/transcriptomics · enzyme assay
+  </p>
+</header>
+
+<!-- ===== CONTEXT ALERT ===== -->
+<div class="alert alert-gap">
+  <strong>Literature Gap:</strong> Direct qPCR or enzyme assay studies of CYP P450 genes specifically in marine
+  fungi during diesel or crude oil exposure are largely absent from 2021–2025 peer-reviewed literature.
+  Evidence comes from three indirect routes: (1) genome/in-silico annotation of CYP gene repertoires in marine isolates,
+  (2) metabolite profiling of PAH biotransformation products consistent with P450-mediated epoxidation,
+  and (3) transcriptomic / gene-deletion studies in terrestrial <em>Aspergillus</em> whose closest relatives
+  are marine strains. This gap is discussed in the observations section.
+</div>
+
+<!-- ===== METHOD COVERAGE MATRIX ===== -->
+<h2>Method Coverage at a Glance</h2>
+<div class="matrix-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th>Paper (Year)</th>
+        <th>Marine isolate?</th>
+        <th>Genome / Bioinformatics</th>
+        <th>qPCR / Transcriptomics</th>
+        <th>Enzyme assay (P450)</th>
+        <th>Metabolomics / Metabolites</th>
+        <th>In silico docking</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Kumar et al. 2021</td>
+        <td class="dot-yes">●</td>
+        <td class="dot-yes">●</td>
+        <td class="dot-no">○</td>
+        <td class="dot-no">○</td>
+        <td class="dot-part">◑</td>
+        <td class="dot-no">○</td>
+      </tr>
+      <tr>
+        <td>Dauda et al. 2022</td>
+        <td class="dot-no">○</td>
+        <td class="dot-yes">●</td>
+        <td class="dot-no">○</td>
+        <td class="dot-no">○</td>
+        <td class="dot-no">○</td>
+        <td class="dot-no">○</td>
+      </tr>
+      <tr>
+        <td>Perera et al. 2022</td>
+        <td class="dot-no">○</td>
+        <td class="dot-yes">●</td>
+        <td class="dot-no">○</td>
+        <td class="dot-no">○</td>
+        <td class="dot-no">○</td>
+        <td class="dot-yes">●</td>
+      </tr>
+      <tr>
+        <td>Hkiri et al. 2023</td>
+        <td class="dot-yes">●</td>
+        <td class="dot-no">○</td>
+        <td class="dot-no">○</td>
+        <td class="dot-part">◑</td>
+        <td class="dot-no">○</td>
+        <td class="dot-no">○</td>
+      </tr>
+      <tr>
+        <td>Kim et al. 2025</td>
+        <td class="dot-no">○</td>
+        <td class="dot-yes">●</td>
+        <td class="dot-no">○</td>
+        <td class="dot-yes">●</td>
+        <td class="dot-yes">●</td>
+        <td class="dot-no">○</td>
+      </tr>
+      <tr>
+        <td>Virués-Segovia et al. 2023 (review)</td>
+        <td class="dot-yes">●</td>
+        <td class="dot-no">○</td>
+        <td class="dot-part">◑</td>
+        <td class="dot-no">○</td>
+        <td class="dot-yes">●</td>
+        <td class="dot-no">○</td>
+      </tr>
+      <tr>
+        <td>Ostrem Loss et al. 2019*</td>
+        <td class="dot-no">○</td>
+        <td class="dot-yes">●</td>
+        <td class="dot-yes">●</td>
+        <td class="dot-yes">●</td>
+        <td class="dot-yes">●</td>
+        <td class="dot-no">○</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p style="font-size:0.78rem; color:#718096; margin-bottom:1.5rem;">
+  ● = primary method used &nbsp;◑ = partial/indirect evidence &nbsp;○ = not applied &nbsp;* = 2019 (outside range, included as key mechanistic reference)
+</p>
+
+<!-- ===== PAPER 1 ===== -->
+<h2>Paper Summaries</h2>
+
+<details class="paper-card" open>
+  <summary>
+    <div class="summary-text">
+      <div class="paper-title">
+        Genome sequence analysis of deep-sea <em>Aspergillus sydowii</em> BOBA1 and effect of high pressure on biodegradation of spent engine oil
+        <span class="badge b-marine">Marine</span>
+        <span class="badge b-genome">Genomics</span>
+        <span class="badge b-metab">GC-MS</span>
+      </div>
+      <div class="paper-meta">Kumar et al. · 2021 · <em>Scientific Reports</em> · DOI: 10.1038/s41598-021-88525-9</div>
+    </div>
+  </summary>
+  <div class="paper-body">
+    <div class="field">
+      <div class="field-label">Problem</div>
+      <div class="field-content">A deep-sea <em>Aspergillus</em> isolated at 3,000 m in the Bay of Bengal showed remarkable crude oil degradation. Whether elevated hydrostatic pressure enhances rather than inhibits its capacity, and which genes in its genome underpin the ability, was unknown.</div>
+    </div>
+    <div class="field">
+      <div class="field-label">Methods — P450 Investigation</div>
+      <div class="field-content">
+        <strong>Whole-genome sequencing</strong> (Illumina HiSeq 4000; 38.8 Mb, 18,932 predicted genes; 1,482 genes unique to BOBA1).
+        Genome annotated against CAZy, KEGG, and GO databases. P450-encoding and other oxidoreductase genes identified by functional annotation.
+        Degradation confirmed by GC-MS, FTIR, and ¹H/¹³C NMR on spent engine oil, diesel, crude oil, and n-hexadecane.
+        Pressure experiments: 0.1 MPa vs 10 MPa bioreactors.
+      </div>
+    </div>
+    <div class="field">
+      <div class="field-label">Key Findings — P450 Related</div>
+      <div class="field-content">
+        <div class="hl hl-purple">
+          Genome encodes: <strong>4 cytochrome P450 monooxygenases</strong>, 6 dioxygenases, peroxidases,
+          glutathione S-transferases, and siderophore biosynthesis clusters for aromatic hydrocarbon catabolism.
+          Catechol, gentisate, and phthalic acid pathways confirmed — all downstream of P450-initiated ring oxidation.
+        </div>
+        Oil removal: 71.2% (0.1 MPa) → <strong>82.5% (10 MPa)</strong> in 21 days.
+        High pressure increased rather than suppressed activity; interpreted as enhanced solubilisation of substrates plus
+        possible upregulation of oxidative metabolism under pressure. BOD decrease confirmed genuine mineralisation.
+      </div>
+    </div>
+    <div class="field">
+      <div class="field-label">Takeaways</div>
+      <div class="field-content">First genomic-level P450 characterisation of a piezotolerant marine <em>Aspergillus</em>.
+      CYP genes are present and degradation pathways are complete, but individual CYP isoforms were not individually
+      characterised or differentially expressed — this is the key follow-up gap.</div>
+    </div>
+    <div class="field">
+      <div class="field-label">Limitations</div>
+      <div class="field-content">No qPCR, transcriptomics, or individual enzyme assays for specific CYP genes.
+      Pressure limited to 10 MPa (≈1,000 m equivalent). Single isolate.</div>
+    </div>
+  </div>
+</details>
+
+<!-- ===== PAPER 2 ===== -->
+<details class="paper-card">
+  <summary>
+    <div class="summary-text">
+      <div class="paper-title">
+        Robust Profiling of Cytochrome P450s (P450ome) in Notable <em>Aspergillus</em> spp.
+        <span class="badge b-genome">Genomics</span>
+        <span class="badge b-insilico">Phylogenomics</span>
+      </div>
+      <div class="paper-meta">Dauda et al. · 2022 · <em>Life</em> (Basel) · DOI: 10.3390/life12030451</div>
+    </div>
+  </summary>
+  <div class="paper-body">
+    <div class="field">
+      <div class="field-label">Problem</div>
+      <div class="field-content">The CYP complement (P450ome) of ecologically diverse <em>Aspergillus</em> species has not been catalogued systematically, making it difficult to predict which strains harbour CYP gene families relevant to xenobiotic and hydrocarbon degradation.</div>
+    </div>
+    <div class="field">
+      <div class="field-label">Methods — P450 Investigation</div>
+      <div class="field-content">
+        Eight species profiled: <em>A. carbonarius, A. clavatus, A. flavus, A. fumigatus, A. nidulans, A. niger, A. oryzae, A. terreus</em>.
+        P450 sequences retrieved from Joint Genome Institute (JGI); validated against Fungal Cytochrome P450 Database (FCPD)
+        with conserved domain screening (e-value ≥ 7). Phylogenetic analysis via MEGA X (MUSCLE alignment).
+        Subcellular localisation predicted by iLoc-Animal and BUSCA servers.
+        Secondary metabolite gene cluster linkage via JGI SM database.
+      </div>
+    </div>
+    <div class="field">
+      <div class="field-label">Key Findings — P450 Related</div>
+      <div class="field-content">
+        <div class="hl hl-purple">
+          <strong>306 P450 enzymes total</strong> across eight species; classified into 120 families and 64 clans,
+          spanning 15 phylogenetic clades. Multiple CYP families associated with hydrophobic xenobiotic degradation
+          pathways. Endoplasmic reticulum is the dominant subcellular location — consistent with ω-oxidation of
+          aliphatic hydrocarbons at the ER membrane. Secondary metabolite biosynthetic clusters linked to seven
+          gene cluster types (PKS, NRPS, DMATS, terpene cyclases, etc.).
+        </div>
+        <em>A. terreus</em> and <em>A. niger</em> showed the highest CYP diversity; both are well-documented
+        hydrocarbon degraders. The analysis identifies candidate CYP families for heterologous expression
+        studies aimed at hydrocarbon biotransformation.
+      </div>
+    </div>
+    <div class="field">
+      <div class="field-label">Takeaways</div>
+      <div class="field-content">The P450ome of <em>Aspergillus</em> is far larger than generally appreciated;
+      the ER-resident CYP repertoire makes these fungi intrinsically equipped for hydrocarbon oxidation.
+      This catalogue provides a roadmap for selecting gene targets for qPCR or heterologous expression in marine
+      hydrocarbon degradation studies.</div>
+    </div>
+    <div class="field">
+      <div class="field-label">Limitations</div>
+      <div class="field-content">Entirely in silico; no marine species included; no experimental validation of
+      CYP function. Predictions require wet-lab confirmation.</div>
+    </div>
+  </div>
+</details>
+
+<!-- ===== PAPER 3 ===== -->
+<details class="paper-card">
+  <summary>
+    <div class="summary-text">
+      <div class="paper-title">
+        Identification of long-chain alkane-degrading (LadA) monooxygenases in <em>Aspergillus flavus</em> via in silico analysis
+        <span class="badge b-genome">Genomics</span>
+        <span class="badge b-insilico">In silico</span>
+      </div>
+      <div class="paper-meta">Perera et al. · 2022 · <em>Frontiers in Microbiology</em> · DOI: 10.3389/fmicb.2022.898456</div>
+    </div>
+  </summary>
+  <div class="paper-body">
+    <div class="field">
+      <div class="field-label">Problem</div>
+      <div class="field-content">Long-chain alkane (C16–C30) degradation was considered exclusive to bacterial enzymes (bacterial LadA). Whether <em>Aspergillus</em> encodes eukaryotic homologs of this flavin-dependent monooxygenase family, which would explain efficient crude oil degradation without CYP52-type P450s for this substrate range, was untested.</div>
+    </div>
+    <div class="field">
+      <div class="field-label">Methods — Monooxygenase Investigation</div>
+      <div class="field-content">
+        Species: <em>A. flavus</em> NRRL 3357. HMMER and PSI-BLAST for homology searches against bacterial LadA sequences.
+        MEGA X phylogenetic tree construction. SWISS-MODEL for 3D structural modelling; AutoDock Vina molecular docking
+        with C16, C20, C24, C30 n-alkane ligands. Model validation: PROCHECK, VERIFY3D, PROSA, ERRAT.
+        <strong>Note:</strong> This study covers LadA-type flavin monooxygenases, not CYP P450s, but both are used
+        for initial alkane activation and are complementary systems.
+      </div>
+    </div>
+    <div class="field">
+      <div class="field-label">Key Findings — Monooxygenase Related</div>
+      <div class="field-content">
+        <div class="hl hl-purple">
+          <strong>First identification of eukaryotic LadA homologs.</strong> Six uncharacterised proteins detected:
+          five classified as LadAα-type (<span class="gene">Af1–Af5</span>) and one LadAβ.
+          Docking showed <span class="gene">Af1, Af3, Af4, Af5</span> can capture n-alkanes up to C30 in their active pockets,
+          with binding affinities comparable to bacterial LadA. Sequence identity 45–50% with bacterial templates.
+        </div>
+        This finding suggests <em>Aspergillus</em> activates very long-chain alkanes via a non-CYP mechanism alongside
+        CYP52-mediated hydroxylation, broadening the substrate range of the genus and potentially explaining
+        degradation of heavy crude oil fractions (C25–C30+) found in diesel range organics.
+      </div>
+    </div>
+    <div class="field">
+      <div class="field-label">Takeaways</div>
+      <div class="field-content">Fungi likely possess parallel alkane monooxygenase systems (CYP52-type P450 for C8–C18;
+      LadA-type flavomonooxygenase for C16–C30+), making them more versatile than previously recognised.
+      These candidate genes are prime targets for heterologous expression and enzyme kinetics studies.</div>
+    </div>
+    <div class="field">
+      <div class="field-label">Limitations</div>
+      <div class="field-content">Entirely computational; no expression data or biochemical characterisation.
+      45–50% sequence identity with bacterial templates limits model accuracy. Classified as Frontiers
+      (deprioritised journal) but this is the only study to identify LadA in fungi.</div>
+    </div>
+  </div>
+</details>
+
+<!-- ===== PAPER 4 ===== -->
+<details class="paper-card">
+  <summary>
+    <div class="summary-text">
+      <div class="paper-title">
+        Ability of marine-derived fungi isolated from polluted saline environments for enzymatic hydrocarbon remediation
+        <span class="badge b-marine">Marine</span>
+        <span class="badge b-enzyme">Enzyme assay</span>
+      </div>
+      <div class="paper-meta">Hkiri et al. · 2023 · <em>Brazilian Journal of Microbiology</em> · DOI: 10.1007/s42770-023-01049-4</div>
+    </div>
+  </summary>
+  <div class="paper-body">
+    <div class="field">
+      <div class="field-label">Problem</div>
+      <div class="field-content">Marine fungi from Mediterranean saline habitats (hypersaline lakes and coastal sediments) remain largely unscreened for their enzymatic capacity to degrade crude oil under realistic salinity conditions.</div>
+    </div>
+    <div class="field">
+      <div class="field-label">Methods — Enzyme Investigation</div>
+      <div class="field-content">
+        Isolation from Lake of Bizerte, Sebkha Sijoumi, Lake of Tunis (North Tunisia). Identified species:
+        <em>Chaetomium jodhpurense, C. maderasense, Paraconiothyrium variabile, Phoma betae</em>.
+        Enzymatic assays: laccase (ABTS oxidation), lignin peroxidase (veratryl alcohol oxidation),
+        and manganese-dependent peroxidase (MnSO₄ oxidation). Fractional Factorial design (2⁷⁻⁴) for
+        enzyme production optimisation (pH, temperature, carbon/nitrogen source). 25-day crude oil
+        (1% v/v in 50% seawater) degradation trial.
+      </div>
+    </div>
+    <div class="field">
+      <div class="field-label">Key Findings — Enzymatic</div>
+      <div class="field-content">
+        <div class="hl">
+          <em>Paraconiothyrium variabile</em> was the top performer:<br>
+          MnP: <strong>2,730 U/L</strong> | LiP: 410 U/L | Laccase: 168.5 U/L | Crude oil degradation: <strong>48.3%</strong>
+        </div>
+        <strong>P450 caveat:</strong> This study did not directly measure cytochrome P450 activity or gene expression.
+        The dominant enzymes detected are peroxidases and laccase (ligninolytic pathway). However, the hypersaline
+        isolation environment and the observed aromatic hydrocarbon degradation are consistent with P450-mediated
+        initial oxidation steps followed by ligninolytic amplification — a pattern commonly inferred in other
+        marine fungal systems (see Virués-Segovia et al. 2023 below).
+      </div>
+    </div>
+    <div class="field">
+      <div class="field-label">Takeaways</div>
+      <div class="field-content">Mediterranean saline-lake fungi show enzymatic hydrocarbon degradation comparable
+      to better-characterised marine species. The absence of CYP measurement is a methodological gap —
+      adding CO-difference spectroscopy or CYP-specific inhibitor assays (e.g., metyrapone) to this
+      experimental design would confirm or quantify P450 contribution.</div>
+    </div>
+    <div class="field">
+      <div class="field-label">Limitations</div>
+      <div class="field-content">No P450 measurement. Single crude oil source; four-strain panel only.
+      No metabolite identification — impossible to confirm which enzymatic route drove degradation.</div>
+    </div>
+  </div>
+</details>
+
+<!-- ===== PAPER 5 ===== -->
+<details class="paper-card">
+  <summary>
+    <div class="summary-text">
+      <div class="paper-title">
+        Metabolic engineering of <em>Yarrowia lipolytica</em> for enhanced α,ω-diol production from alkanes via CRISPR-Cas9 and CYP52 (ALK1) overexpression
+        <span class="badge b-genome">Genomics</span>
+        <span class="badge b-enzyme">Enzyme assay</span>
+        <span class="badge b-metab">Metabolomics</span>
+      </div>
+      <div class="paper-meta">Kim et al. · 2025 · <em>Frontiers in Bioengineering and Biotechnology</em> · DOI: 10.3389/fbioe.2025.1695661</div>
+    </div>
+  </summary>
+  <div class="paper-body">
+    <div class="field">
+      <div class="field-label">Problem</div>
+      <div class="field-content">The marine-associated yeast <em>Yarrowia lipolytica</em> naturally assimilates n-alkanes via CYP52 P450 hydroxylation but over-oxidises intermediates to diacids, limiting the usefulness of its P450 machinery for selective biotransformation. Whether targeted gene deletion + CYP52 overexpression can redirect flux was untested.</div>
+    </div>
+    <div class="field">
+      <div class="field-label">Methods — P450 Investigation</div>
+      <div class="field-content">
+        CRISPR-Cas9 deletion of 14 competing pathway genes (10 in fatty alcohol oxidation, 4 in fatty aldehyde oxidation).
+        Overexpression of P450 genes: <span class="gene">ALK1</span>, <span class="gene">ALK4</span>,
+        <span class="gene">ALK7</span> (all CYP52 family, ER-bound).
+        Substrate: 50 mM n-dodecane. pH-controlled fed-batch fermentation.
+        Metabolite quantification: GC-MS and HPLC for 1,12-dodecanediol and diacid byproducts.
+        Enzyme activity: cytochrome P450 assay (CO-reduced difference spectrum for CYP52 activity).
+      </div>
+    </div>
+    <div class="field">
+      <div class="field-label">Key Findings — CYP52 P450</div>
+      <div class="field-content">
+        <div class="hl hl-purple">
+          <span class="gene">ALK1</span> overexpression in strain YALI17 (14 competing genes deleted):
+          <strong>1.45 mM 1,12-dodecanediol</strong> — 29-fold increase over wild-type.
+          pH-controlled biotransformation: <strong>3.2 mM</strong>.
+          CYP52 (ALK1) is the rate-limiting and product-determining enzyme for n-alkane terminal hydroxylation.
+        </div>
+        Demonstrated that CYP52 P450 gene copy number and genetic background (competing pathways) are the primary
+        determinants of alkane conversion efficiency. Pathway metabolomics showed clean accumulation of terminal diol
+        without ring or backbone modification — confirming ω-oxidation by CYP52 as the sole initial step.
+        <br><br>
+        <em>Marine relevance:</em> <em>Y. lipolytica</em> is frequently isolated from marine-derived petroleum-polluted
+        environments; its CYP52 system is therefore directly representative of marine yeast alkane oxidation capacity.
+      </div>
+    </div>
+    <div class="field">
+      <div class="field-label">Takeaways</div>
+      <div class="field-content">CYP52 P450s (specifically ALK1) are the primary alkane-activating enzyme in
+      yeasts that inhabit hydrocarbon-rich marine environments. The overexpression approach demonstrates that
+      the key limitation is gene copy number and flux competition, not catalytic efficiency —
+      relevant for designing marine bioremediation strains.</div>
+    </div>
+    <div class="field">
+      <div class="field-label">Limitations</div>
+      <div class="field-content">Non-marine laboratory strain (engineered). Residual diacid overflow persists (>10 mM).
+      No field validation; pH-controlled fermentation conditions do not reflect open-sea environments.</div>
+    </div>
+  </div>
+</details>
+
+<!-- ===== PAPER 6 (REVIEW) ===== -->
+<details class="paper-card">
+  <summary>
+    <div class="summary-text">
+      <div class="paper-title">
+        Marine-Derived Fungi as Biocatalysts (Review — PAH biotransformation and P450 pathway evidence)
+        <span class="badge b-marine">Marine</span>
+        <span class="badge b-review">Review</span>
+        <span class="badge b-metab">Metabolite evidence</span>
+      </div>
+      <div class="paper-meta">Virués-Segovia et al. · 2023 · <em>Frontiers in Microbiology</em> · DOI: 10.3389/fmicb.2023.1125639</div>
+    </div>
+  </summary>
+  <div class="paper-body">
+    <div class="field">
+      <div class="field-label">Problem</div>
+      <div class="field-content">Marine-derived fungi are diverse catalysts for biotransformation of xenobiotics, but no comprehensive synthesis had linked specific enzymatic evidence (especially P450 pathway) to measured PAH metabolites across strains from different marine habitats.</div>
+    </div>
+    <div class="field">
+      <div class="field-label">Methods — Evidence Base for P450</div>
+      <div class="field-content">
+        Systematic review of marine fungal biotransformation studies through Sep 2022. Covers fungi isolated from
+        sponges, algae, corals, and sediments in Brazilian Atlantic and Asian coastal waters.
+        P450 evidence types synthesised:
+        (a) metabolite hydroxylation patterns characteristic of CYP-mediated epoxidation + epoxide hydrolase;
+        (b) transcriptomic data (mRNA-seq) for <em>Tolypocladium</em> sp. CBMAI 1346;
+        (c) inhibitor studies with P450 inhibitors in some strains.
+      </div>
+    </div>
+    <div class="field">
+      <div class="field-label">Key Findings — P450 in Marine Fungi</div>
+      <div class="field-content">
+        <div class="hl hl-purple">
+          <strong><em>Tolypocladium</em> sp. CBMAI 1346</strong> (sponge-derived, saline conditions):
+          Transcriptomic analysis confirmed upregulation of cytochrome P450 monooxygenase,
+          phenol 2-monooxygenase, and epoxide hydrolase genes during pyrene degradation.
+          Saline-optimised conditions: <strong>95.54% pyrene removal</strong> in 7 days.
+          Metabolites (hydroxypyrene, pyrene dihydrodiol, dihydroxypyrene) match the canonical
+          <strong>fungal CYP → arene oxide → trans-dihydrodiol</strong> pathway.
+        </div>
+        <strong><em>Aspergillus sclerotiorum</em> CBMAI 849</strong> (marine-derived):
+        99.7% pyrene / 76.6% benzo[a]pyrene removal. Metabolite analysis consistent with CYP
+        epoxidation followed by sulfate conjugation — a unique fungal route distinct from mammalian CYP pathways.
+        <br><br>
+        <strong><em>Mucor racemosus</em> CBMAI 847</strong>: Similarly metabolized pyrene and BaP through
+        CYP-mediated intermediates conjugated to sulfate.<br>
+        <strong><em>Cladosporium</em> sp. CBMAI 1237</strong>: Produced anthraquinone as a common oxidation
+        product from anthracene, indicating monooxygenase-driven pathway.
+      </div>
+    </div>
+    <div class="field">
+      <div class="field-label">Takeaways</div>
+      <div class="field-content">Marine fungi from sponge-associated habitats predominantly use CYP-mediated
+      pathways for PAH degradation, producing hydroxylated / dihydrodiol / sulfate-conjugated metabolites
+      that are diagnostic of P450 activity. Transcriptomics in <em>Tolypocladium</em> provides the most
+      direct molecular evidence of P450 gene upregulation in a marine context under saline conditions.</div>
+    </div>
+    <div class="field">
+      <div class="field-label">Limitations</div>
+      <div class="field-content">Review only (no new data). Lacks enzyme kinetics, specific CYP isoform
+      identification, or gene deletion evidence linking any single CYP gene to activity. Most primary studies
+      were conducted before 2020.</div>
+    </div>
+  </div>
+</details>
+
+<!-- ===== PAPER 7 (KEY MECHANISTIC REFERENCE, 2019) ===== -->
+<details class="paper-card">
+  <summary>
+    <div class="summary-text">
+      <div class="paper-title">
+        Cytochrome P450 Monooxygenase-Mediated Metabolic Utilization of Benzo[a]Pyrene by <em>Aspergillus</em> Species
+        <span class="badge b-genome">Genomics / RNAseq</span>
+        <span class="badge b-qpcr">Transcriptomics</span>
+        <span class="badge b-enzyme">Enzyme assay</span>
+        <span class="badge b-metab">Metabolomics</span>
+        <span class="badge b-2019">2019 — key reference</span>
+      </div>
+      <div class="paper-meta">Ostrem Loss et al. · 2019 · <em>mBio</em> · DOI: 10.1128/mBio.00558-19</div>
+    </div>
+  </summary>
+  <div class="paper-body">
+    <div class="alert alert-info" style="margin-bottom:0.8rem;">
+      <strong>Note:</strong> Published in 2019, outside the primary 2021–2025 search window. Included as the most
+      mechanistically complete study linking a specific CYP gene to BaP metabolism in <em>Aspergillus</em>; directly
+      relevant to marine isolates of <em>A. nidulans, A. flavus, A. sydowii</em> which share the same gene family.
+    </div>
+    <div class="field">
+      <div class="field-label">Problem</div>
+      <div class="field-content">Despite widespread observation that <em>Aspergillus</em> species degrade benzo[a]pyrene (BaP), the specific cytochrome P450 gene responsible had never been identified. Whether BaP metabolism confers a nutrient-acquisition or detoxification function was unclear.</div>
+    </div>
+    <div class="field">
+      <div class="field-label">Methods — P450 Investigation (most complete in literature)</div>
+      <div class="field-content">
+        Species: <em>A. nidulans, A. flavus, A. oryzae, A. fumigatus</em>.
+        Substrate: 200 μM BaP.
+        <strong>RNA sequencing</strong> (whole-transcriptome) of BaP-exposed vs. control cultures identified
+        upregulated CYP candidates.
+        <strong>Gene deletion mutagenesis:</strong> Δ<span class="gene">bapA</span> (AN1884) abolishes BaP degradation completely.
+        <strong>P450 enzyme assay:</strong> Microsomal fraction + NADPH cofactor; HPLC-fluorescence detection of metabolites.
+        <strong>HPLC metabolite profiling:</strong> Identified unique BaP metabolite distinct from mammalian CYP1A1 products.
+        Transcription factor analysis: VeA and VelB regulate <span class="gene">bapA</span> under nutrient limitation.
+      </div>
+    </div>
+    <div class="field">
+      <div class="field-label">Key Findings — P450 Gene Identified</div>
+      <div class="field-content">
+        <div class="hl hl-purple">
+          <span class="gene">bapA</span> (gene AN1884, encodes <strong>CYP617D1</strong>) is the single essential
+          P450 gene for BaP catabolism in <em>Aspergillus</em>. Its deletion abolishes degradation entirely.
+          BaP degradation: <strong>92–95% removal in 7 days</strong>.
+          Metabolite produced differs from mammalian BaP metabolites — suggesting a novel, possibly less toxic,
+          oxidation pathway unique to fungi.
+        </div>
+        RNAseq co-upregulated genes: <span class="gene">citA</span> (citrate synthase), <span class="gene">gsdA</span>,
+        <span class="gene">acuE</span>, <span class="gene">acuD</span>, <span class="gene">cycA</span> —
+        indicating BaP carbon assimilation into central metabolism via TCA cycle.
+        VeA/VelB transcription factors link BaP response to nutrient status — degradation as a carbon
+        acquisition strategy, not merely detoxification.
+      </div>
+    </div>
+    <div class="field">
+      <div class="field-label">Takeaways</div>
+      <div class="field-content"><span class="gene">bapA</span>/CYP617D1 is the specific P450 to target for qPCR
+      or expression studies in marine <em>Aspergillus</em> isolates exposed to PAH-containing crude oil. Its
+      homologs in marine-derived <em>A. sydowii</em>, <em>A. terreus</em>, and <em>A. sclerotiorum</em> are the
+      most probable candidates for P450-driven hydrocarbon catabolism in marine environments.</div>
+    </div>
+    <div class="field">
+      <div class="field-label">Limitations</div>
+      <div class="field-content">Terrestrial laboratory <em>Aspergillus</em> strains only; no marine isolates tested.
+      BaP is a PAH substrate — applicability to aliphatic diesel-range hydrocarbons requires separate study
+      (a different CYP, likely CYP52-type, would be responsible).</div>
+    </div>
+  </div>
+</details>
+
+<!-- ===== CROSS-PAPER OBSERVATIONS ===== -->
+<h2>Cross-Paper Observations</h2>
+
+<div class="obs-box">
+  <h3>1. CYP Families Involved by Substrate Type</h3>
+  <ul>
+    <li><strong>Aromatic hydrocarbons (PAHs — pyrene, BaP, phenanthrene):</strong> CYP617D1 (<span class="gene">bapA</span>), CYP5136A3, CYP63A2, CYP53 clan. Primary mechanism: epoxidation of aromatic ring → arene oxide → <em>trans</em>-dihydrodiol, often with sulfate conjugation in marine strains.</li>
+    <li><strong>Medium-chain n-alkanes (C8–C18, diesel range):</strong> CYP52 family (ω-hydroxylation). Best documented in <em>Yarrowia lipolytica</em> (ALK1/CYP52) and predicted in <em>Aspergillus</em> (from P450ome profiling).</li>
+    <li><strong>Long-chain alkanes (C16–C30+, heavy oil):</strong> LadA-type flavin monooxygenases (newly identified in <em>A. flavus</em>, Perera et al. 2022) — a non-CYP system previously thought to be bacterial only.</li>
+    <li><strong>Marine context:</strong> The CYP pathway in sponge-derived fungi (reviewed in Virués-Segovia 2023) and in deep-sea <em>Aspergillus sydowii</em> (Kumar 2021) appears genomically complete but lacks isoform-level qPCR confirmation.</li>
+  </ul>
+</div>
+
+<div class="obs-box">
+  <h3>2. Methodological Patterns and Gaps</h3>
+  <ul>
+    <li><strong>Genomics is established but enzyme-specific:</strong> Genome annotations identify CYP gene counts and families but do not reveal which genes are induced by specific hydrocarbons. Differential expression data (qPCR or RNAseq during oil exposure) is almost entirely absent for marine isolates.</li>
+    <li><strong>Metabolite identity is indirect evidence:</strong> Trans-dihydrodiol and sulfate conjugate detection (Virués-Segovia 2023) confirms P450 pathway participation but does not identify the specific CYP gene.</li>
+    <li><strong>Gene deletion is the gold standard:</strong> Ostrem Loss et al. 2019 demonstrated this definitively for BaP/CYP617D1 in terrestrial <em>Aspergillus</em>. No equivalent study exists for marine <em>Aspergillus</em> with diesel or crude oil substrates.</li>
+    <li><strong>Enzyme assay (CO-difference spectrum, microsomal P450 activity):</strong> Applied in Kim et al. 2025 (Yarrowia CYP52), not yet applied to marine filamentous fungi.</li>
+    <li><strong>High-pressure + P450:</strong> Kumar et al. 2021 showed oil degradation increases at 10 MPa but did not measure CYP expression — an unexplored interaction between pressure physiology and P450 regulation.</li>
+  </ul>
+</div>
+
+<div class="obs-box">
+  <h3>3. Emerging Consensus</h3>
+  <ul>
+    <li>Marine <em>Aspergillus</em> species (especially <em>A. sydowii</em>, <em>A. terreus</em>, <em>A. sclerotiorum</em>) possess complete genomic repertoires for CYP-based aromatic and aliphatic hydrocarbon catabolism, with downstream TCA-cycle assimilation pathways.</li>
+    <li>Fungi use a distinct P450 route from mammals: sulfate-conjugated PAH metabolites rather than reactive diol-epoxides, suggesting marine fungal P450s may produce less toxic PAH breakdown products — an important bioremediation advantage.</li>
+    <li>CYP52 (ω-oxidation of alkanes) and CYP617D1 (PAH epoxidation) are the two main CYP superfamilies to target in marine hydrocarbon degradation studies, but their marine-specific regulation remains uncharacterised.</li>
+  </ul>
+</div>
+
+<div class="obs-box">
+  <h3>4. Priority Open Questions</h3>
+  <ul>
+    <li>Are <em>bapA</em>/CYP617D1 homologs in marine <em>A. sydowii</em> (BOBA1) or <em>A. sclerotiorum</em> (CBMAI 849) transcriptionally upregulated during crude oil or diesel exposure? → qPCR study needed.</li>
+    <li>Do CYP52 genes in deep-sea <em>Aspergillus</em> show higher basal expression or induction at elevated hydrostatic pressure? → high-pressure transcriptomics needed.</li>
+    <li>Do the five eukaryotic LadA homologs identified in <em>A. flavus</em> (Perera et al. 2022) function as active alkane monooxygenases in vitro? → heterologous expression + enzyme kinetics needed.</li>
+    <li>Can metabolomics (LC-MS/MS) of marine fungal culture supernatants during diesel oil incubation comprehensively map the CYP vs. laccase vs. peroxidase contributions to degradation? → metabolomics study on marine isolates needed.</li>
+  </ul>
+</div>
+
+<!-- ===== REFERENCE TABLE ===== -->
+<h2>Reference Table</h2>
+<div class="table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th>Title (abbreviated)</th>
+        <th>Year</th>
+        <th>Venue</th>
+        <th>P450 / Enzyme Approach</th>
+        <th>1-line Conclusion</th>
+        <th>DOI</th>
+        <th>APA Citation</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Genome of deep-sea <em>A. sydowii</em> BOBA1 + high-pressure oil degradation</td>
+        <td>2021</td>
+        <td><em>Scientific Reports</em></td>
+        <td>Whole-genome annotation; 4 CYP monooxygenases identified</td>
+        <td>Marine deep-sea <em>A. sydowii</em> genome encodes complete CYP pathway for aromatic HC catabolism; degradation enhanced at 10 MPa</td>
+        <td><a href="https://doi.org/10.1038/s41598-021-88525-9" target="_blank">10.1038/s41598-021-88525-9</a></td>
+        <td>Kumar, A. G., Manisha, D., Sujitha, K., Magesh Peter, D., Kirubagaran, R., &amp; Dharani, G. (2021). Genome sequence analysis of deep sea <em>Aspergillus sydowii</em> BOBA1 and effect of high pressure on biodegradation of spent engine oil. <em>Scientific Reports</em>, <em>11</em>, 9164. https://doi.org/10.1038/s41598-021-88525-9</td>
+      </tr>
+      <tr>
+        <td>P450ome profiling of 8 <em>Aspergillus</em> spp.</td>
+        <td>2022</td>
+        <td><em>Life</em> (Basel)</td>
+        <td>Comparative genomics; 306 CYPs in 120 families; phylogenomics</td>
+        <td><em>Aspergillus</em> harbours a vast CYP repertoire (120 families) with multiple clans for xenobiotic/hydrocarbon degradation</td>
+        <td><a href="https://doi.org/10.3390/life12030451" target="_blank">10.3390/life12030451</a></td>
+        <td>Dauda, W. P., Abraham, P., Glen, E., Adetunji, C. O., et al. (2022). Robust profiling of cytochrome P450s (P450ome) in notable <em>Aspergillus</em> spp. <em>Life</em>, <em>12</em>(3), 451. https://doi.org/10.3390/life12030451</td>
+      </tr>
+      <tr>
+        <td>LadA-type alkane monooxygenase in <em>A. flavus</em> via in silico</td>
+        <td>2022</td>
+        <td><em>Frontiers in Microbiology</em></td>
+        <td>Homology modelling; AutoDock Vina; n-alkane C16–C30 docking</td>
+        <td>First eukaryotic LadA monooxygenase homologs identified in <em>Aspergillus</em>; capable of binding long-chain alkanes up to C30</td>
+        <td><a href="https://doi.org/10.3389/fmicb.2022.898456" target="_blank">10.3389/fmicb.2022.898456</a></td>
+        <td>Perera, M., Wijesundera, S., Wijayarathna, C. D., Seneviratne, G., &amp; Jayasena, S. (2022). Identification of long-chain alkane-degrading (LadA) monooxygenases in <em>Aspergillus flavus</em> via in silico analysis. <em>Frontiers in Microbiology</em>, <em>13</em>, 898456. https://doi.org/10.3389/fmicb.2022.898456</td>
+      </tr>
+      <tr>
+        <td>Marine-derived fungi from saline environments for enzymatic HC remediation</td>
+        <td>2023</td>
+        <td><em>Brazilian Journal of Microbiology</em></td>
+        <td>Laccase, LiP, MnP enzyme assay (P450 not measured directly)</td>
+        <td><em>Paraconiothyrium variabile</em> from Mediterranean saline lake achieves 48.3% crude oil degradation with high ligninolytic enzyme output</td>
+        <td><a href="https://doi.org/10.1007/s42770-023-01049-4" target="_blank">10.1007/s42770-023-01049-4</a></td>
+        <td>Hkiri, N., Aounallah, F., Fouzai, K., Chouchani, C., &amp; Asses, N. (2023). Ability of marine-derived fungi isolated from polluted saline environment for enzymatic hydrocarbon remediation. <em>Brazilian Journal of Microbiology</em>, <em>54</em>, 2089–2099. https://doi.org/10.1007/s42770-023-01049-4</td>
+      </tr>
+      <tr>
+        <td><em>Yarrowia lipolytica</em> CYP52/ALK1 CRISPR overexpression for alkane diol production</td>
+        <td>2025</td>
+        <td><em>Frontiers in Bioengineering and Biotechnology</em></td>
+        <td>CRISPR-Cas9, CYP52 overexpression, CO-difference P450 assay, GC-MS metabolomics</td>
+        <td>CYP52/ALK1 overexpression in Yarrowia + competing pathway deletion yields 29-fold improved alkane terminal hydroxylation</td>
+        <td><a href="https://doi.org/10.3389/fbioe.2025.1695661" target="_blank">10.3389/fbioe.2025.1695661</a></td>
+        <td>Kim, Y. C., Choi, W. Y. H., Kim, E.-J., Kim, B.-G., &amp; Yun, H. (2025). Metabolic engineering of <em>Yarrowia lipolytica</em> for enhanced microbial production of medium-chain α,ω-diols from alkanes via CRISPR-Cas9 mediated pathway optimization and P450 alkane monooxygenase overexpression. <em>Frontiers in Bioengineering and Biotechnology</em>, <em>13</em>, 1695661. https://doi.org/10.3389/fbioe.2025.1695661</td>
+      </tr>
+      <tr>
+        <td>Marine-derived fungi as biocatalysts (review)</td>
+        <td>2023</td>
+        <td><em>Frontiers in Microbiology</em></td>
+        <td>Review: metabolite-based P450 pathway inference; Tolypocladium transcriptomics summary</td>
+        <td>Marine sponge-derived fungi metabolise PAHs via CYP-mediated epoxidation producing sulfate conjugates — a distinct, lower-toxicity pathway</td>
+        <td><a href="https://doi.org/10.3389/fmicb.2023.1125639" target="_blank">10.3389/fmicb.2023.1125639</a></td>
+        <td>Virués-Segovia, J. R., Muñoz-Mira, S., Durán-Patrón, R., &amp; Aleu, J. (2023). Marine-derived fungi as biocatalysts. <em>Frontiers in Microbiology</em>, <em>14</em>, 1125639. https://doi.org/10.3389/fmicb.2023.1125639</td>
+      </tr>
+      <tr>
+        <td><em>bapA</em>/CYP617D1 is the essential P450 for BaP metabolism in <em>Aspergillus</em> [2019]</td>
+        <td>2019</td>
+        <td><em>mBio</em></td>
+        <td>RNAseq, gene deletion, P450 microsome assay, HPLC metabolomics</td>
+        <td>CYP617D1 (<em>bapA</em>) is the essential P450 for 92–95% BaP catabolism; controlled by VeA/VelB under nutrient limitation</td>
+        <td><a href="https://doi.org/10.1128/mBio.00558-19" target="_blank">10.1128/mBio.00558-19</a></td>
+        <td>Ostrem Loss, E. M., Lee, M.-K., Wu, M.-Y., Martien, J., Chen, W., Amador-Noguez, D., Jefcoate, C., Remucal, C., Jung, S., Kim, S.-C., &amp; Yu, J.-H. (2019). Cytochrome P450 monooxygenase-mediated metabolic utilization of benzo[a]pyrene by <em>Aspergillus</em> species. <em>mBio</em>, <em>10</em>(3), e00558-19. https://doi.org/10.1128/mBio.00558-19</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<footer>
+  Generated by Claude Code (claude-sonnet-4-6) · Workspace: Diesel Degradation Review · 2026-06-15
+</footer>
+
+</div>
+</body>
+</html>
